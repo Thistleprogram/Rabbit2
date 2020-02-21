@@ -1,0 +1,186 @@
+# include <Siv3D.hpp>
+
+typedef long long ll;
+typedef double ld;
+const Vec2 gravity(0, 1000);
+const Color bcolor(180, 180, 180);
+int ssize = 3000;
+
+Array<Rect>walls;
+Array<Rect>blocks;
+Array<int>scores;
+//定数
+
+bool isdual;
+
+Vec2 Cpos(bool l = 0, int event = 0) {
+	if (l == 0) {
+		return Cursor::Pos();
+	}
+	else {
+
+	}
+}
+bool isclicked(bool l = 0, int num = 0, int event = 0) {
+	static bool a;
+	return 1;
+}
+bool isrolled(bool l = 0, int event = 0) {
+	return 1;
+}
+//Player
+
+struct Player {
+	//基本データ
+	const Texture img_l, img_r;
+	Texture img;
+	Vec2 pos, speed, accel;
+	Rect prec;
+	bool riding, ltouch, rtouch;
+
+	//ワイヤーデータ
+	Vec2 anchor;
+	bool isinjected;
+
+	Player(Vec2 pos, String path) :pos(pos), speed(Vec2{ 0,0 }), accel(Vec2(0, 0)), riding(0), ltouch(0), rtouch(0),
+		anchor(Vec2{ 0,0 }), isinjected(0), img_l(Texture(path)), img_r(Image(path).mirror()) {
+		img = img_l;
+	}
+
+	void touch(Vec2& sum, Array<Rect>& Walls) {
+		for (const auto wall : Walls) {
+			if (!prec.intersects(wall)) continue;
+			if (pos.x < wall.center().x && pos.y < wall.center().y) {
+				if (prec.br().y - wall.tl().y > prec.br().x - wall.tl().x) {
+					pos.x = wall.tl().x - 24;
+					speed.x = 0; sum.x = 0;
+				}
+				else {
+					speed.y = 0; sum.y = 0;
+					pos.y = wall.tl().y - 32;
+				}
+			}
+			else if (pos.x < wall.center().x && pos.y >= wall.center().y) {
+				if (wall.bl().y - prec.tr().y > prec.tr().x - wall.bl().x) {
+					pos.x = wall.bl().x - 24;
+					speed.x = 0; sum.x = 0;
+				}
+				else {
+					speed.y = 0; sum.y = 0;
+					pos.y = wall.bl().y + 32;
+				}
+			}
+			else if (pos.x > wall.center().x&& pos.y < wall.center().y) {
+				if (prec.bl().y - wall.tr().x > wall.tr().x - prec.bl().x) {
+					pos.x = wall.tr().x + 24;
+					speed.x = 0; sum.x = 0;
+				}
+				else {
+					pos.y = wall.tr().y - 32;
+					speed.y = 0; sum.y = 0;
+				}
+			}
+			else {
+				if (wall.br().y - prec.tl().y > wall.br().x - prec.tl().x) {
+					pos.x = wall.br().x + 24;
+					speed.x = 0; sum.x = 0;
+				}
+				else {
+					pos.y = wall.br().y + 32;
+					speed.y = 0; sum.y = 0;
+				}
+			}
+		}
+	}
+	void touching(Array<Rect>& w) {
+		for (const auto wall : w) {
+			if (wall.tl().y == pos.y + 32) riding = 1;
+			if (wall.tl().x == pos.x + 24) rtouch = 1;
+			if (wall.tr().x == pos.x - 24) ltouch = 1;
+		}
+	}
+	void update(ld delta) {
+		prec = Rect(pos.x - 24, pos.y - 32, 48, 64);
+		Vec2 sum(0, 0);
+		sum += gravity * delta;
+		riding = 0; ltouch = 0; rtouch = 0;
+		touching(walls);
+		touching(blocks);
+		bool isw = 0;
+		if (KeyW.pressed()) {
+			if (riding) sum.y -= 500;
+			else if (speed.y > -400) sum.y -= (400 + speed.y) * delta;
+		}
+		if (KeyS.pressed()) {
+			if (!riding && speed.y < 400) sum.y += (400 - speed.y) * delta;
+		}
+		if (KeyA.pressed()) {
+			//座標をマイナスする
+			if (rtouch) sum.x -= 200;
+			else if (speed.x > -400) sum.x -= (400 + speed.x) * delta;
+			isw = 1;
+		}
+		if (KeyD.pressed()) {
+			if (ltouch) sum.x += 200;
+			else if (speed.x < 400) sum.x += (400 - speed.x) * delta;
+			isw = 1;
+		}
+		if (riding && !isw) {
+			speed.x *= 0.9;
+		}
+		speed += sum;
+		pos += speed * delta;
+		prec = Rect(pos.x - 24, pos.y - 32, 48, 64);
+		touch(sum, blocks);
+		touch(sum, walls);
+		prec = Rect(pos.x - 24, pos.y - 32, 48, 64);
+		if (sum.x > 0) img = img_r;
+		else if (sum.x < 0) img = img_l;
+	}
+
+	void draw(ld delta) {
+		update(delta);
+		if (pos.x < 600) img.drawAt(pos);
+		else if (pos.x < ssize - 600) img.drawAt(Vec2(600, pos.y));
+		else img.drawAt(Vec2(pos.x - (ssize - 1200), pos.y));
+	}
+};
+
+void Main() {
+	Window::Resize(1500, 800);
+
+	Player player(Vec2(100, 200), U"Datas/rabbit.png");
+
+	//block, wall, scoreの読み込み
+	String str[10];
+	CSVData bcsv(U"Datas/blocks.csv");
+	for (int i = 0; i < bcsv.rows(); i++) {
+		blocks << Rect(Parse<int>(bcsv[i][0]), Parse<int>(bcsv[i][1]), Parse<int>(bcsv[i][2]), Parse<int>(bcsv[i][3]));
+	}
+	CSVData wcsv(U"Datas/walls.csv");
+	for (int i = 0; i < wcsv.rows(); i++) {
+		walls << Rect(Parse<int>(wcsv[i][0]), Parse<int>(wcsv[i][1]), Parse<int>(wcsv[i][2]), Parse<int>(wcsv[i][3]));
+	}
+	while (System::Update()) {
+		Scene::SetBackground(Palette::White);
+
+		player.draw(Scene::DeltaTime());
+
+		//blocks,walls
+		for (const auto wall : walls) {
+			if (player.pos.x < 600) wall.draw(bcolor);
+			else if (player.pos.x < ssize - 600) wall.movedBy(600 - player.pos.x, 0).draw(bcolor);
+			else wall.movedBy(1200 - ssize, 0).draw(bcolor);
+		}
+		for (const auto wall : blocks) {
+			if (player.pos.x < 600) wall.draw(bcolor);
+			else if (player.pos.x < ssize - 600) wall.movedBy(600 - player.pos.x, 0).draw(bcolor);
+			else wall.movedBy(1200 - ssize, 0).draw(bcolor);
+		}
+
+
+		//UI
+		Rect(0, 700, 1200, 100).draw(Palette::Gray);
+		Rect(1200, 0, 300, 800).draw(Palette::Aqua);
+	}
+}

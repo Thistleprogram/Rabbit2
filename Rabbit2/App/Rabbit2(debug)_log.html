@@ -1,0 +1,2333 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>Rabbit2(debug) Log</title>
+<style>
+body		{ background-color: #f9f9f9; font-family: 'Segoe UI','メイリオ','Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','Osaka','ＭＳ Ｐゴシック','MS PGothic','Arial',sans-serif; }
+h2			{ color: #333333; text-align: center; font-size: 28px; }
+div			{ font-size: 14px; line-height: 2; word-wrap: break-word; }
+div.error	{ padding-left: 14px; background: #f44336; color: #ffffff; }
+div.fail	{ padding-left: 14px; background: #ff9800; color: #ffffff; }
+div.warning	{ padding-left: 14px; background: #ff9800; color: #ffffff; }
+div.script	{ padding-left: 14px; background: #d9eeda; color: #333333; }
+div.app		{ padding-left: 14px; background: #ffffff; color: #333333; }
+div.info	{ padding-left: 14px; background: #e3f2fd; color: #333333; }
+div.debug	{ padding-left: 14px; background: #f5f5f5; color: #333333; }
+div.trace	{ padding-left: 14px; background: #f5f5f5; color: #333333; }
+div.messages { margin: 0 10% 28px; padding 0 0 28px; border: 1px solid; border-color: #dddddd; border-radius: 2px; box-shadow: 0 1px 1px rgba(0,0,0,.05); }
+</style>
+</head>
+<body>
+<h2>Rabbit2(debug) Log</h2>
+<div class="messages">
+<div class="trace">186: CSystem::init()</div>
+<div class="info">187: ℹ️ 2020/2/18 12:16:57</div>
+<div class="info">187: ⌛ Preparing for setup...</div>
+<div class="info">187: ℹ️ Siv3D Engine (Debug build) version 0.4.2 (Windows Desktop)</div>
+<div class="trace">187: CCPU::init()</div>
+<div class="info">187: ℹ️ CPU vendor: GenuineIntel</div>
+<div class="info">188: ℹ️ CPU name: Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz</div>
+<div class="info">188: ℹ️ Instruction set extensions: SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, AES-NI, AVX, FMA3, AVX2</div>
+<div class="info">188: ℹ️ CCPU initialized</div>
+<div class="trace">189: CProfiler::init()</div>
+<div class="info">189: ℹ️ CProfiler initialized</div>
+<div class="trace">189: CImageFormat::init()</div>
+<div class="debug">189: Supported image file extensions: bmp, png, jpg, jpeg, gif, ppm, pgm, pbm, pnm, tga, webp</div>
+<div class="info">190: ℹ️ CImageFormat initialized</div>
+<div class="trace">190: CObjectDetection::init()</div>
+<div class="info">193: ℹ️ CObjectDetection initialized</div>
+<div class="trace">193: CWindow::init()</div>
+<div class="trace">193: SetHighDPIAwareness(aware = false)</div>
+<div class="trace">194: DLL::LoadSystemLibrary(library = `user32.dll`)</div>
+<div class="trace">194: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `SetThreadDpiAwarenessContext`) p = 0x7ff831e17410</div>
+<div class="trace">194: CWindow::registerWindowClass()</div>
+<div class="trace">196: CWindow::createWindow()</div>
+<div class="trace">196: CWindow::m_state.frameSize: (8, 8), CWindow::m_state.titleBarHeight: 23</div>
+<div class="trace">208: DLL::LoadSystemLibrary(library = `User32.dll`)</div>
+<div class="trace">209: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `SetWindowFeedbackSetting`) p = 0x7ff831e33170</div>
+<div class="info">209: ℹ️ CWindow initialized</div>
+<div class="trace">209: CCursor::init()</div>
+<div class="info">210: ℹ️ CCursor initialized</div>
+<div class="trace">210: CKeyboard::init()</div>
+<div class="info">210: ℹ️ CKeyboard initialized</div>
+<div class="trace">210: CMouse::init()</div>
+<div class="info">210: ℹ️ An input digitizer with support for multiple inputs found</div>
+<div class="info">211: ℹ️ CMouse initialized</div>
+<div class="trace">211: CGamepad::init()</div>
+<div class="info">270: ℹ️ Gamepad initialized</div>
+<div class="trace">270: CXInput::init()</div>
+<div class="trace">271: DLL::LoadSystemLibrary(library = `xinput1_4.dll`)</div>
+<div class="trace">273: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `XInputGetState`) p = 0x7ff8174216f0</div>
+<div class="trace">273: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `XInputSetState`) p = 0x7ff817421990</div>
+<div class="info">273: ℹ️ CXInput initialized</div>
+<div class="trace">274: CTextInput::init()</div>
+<div class="info">330: ℹ️ CTextInput initialized</div>
+<div class="trace">330: CTextToSpeech::init()</div>
+<div class="info">339: ℹ️ TextToSpeech available</div>
+<div class="info">339: ℹ️ CTextToSpeech initialized</div>
+<div class="trace">339: CClipboard::init()</div>
+<div class="info">339: ℹ️ CClipboard initialized</div>
+<div class="trace">339: CDragDrop::init()</div>
+<div class="info">349: ℹ️ CDragDrop initialized</div>
+<div class="trace">349: CCodec::init()</div>
+<div class="trace">350: DLL::LoadSystemLibrary(library = `Mfplat.dll`)</div>
+<div class="trace">353: DLL::LoadSystemLibrary(library = `Mf.dll`)</div>
+<div class="trace">354: DLL::LoadSystemLibrary(library = `Mfreadwrite.dll`)</div>
+<div class="trace">355: DLL::GetFunction::GetFunction(name = `MFStartup`) p = 0x7ff825a357c0</div>
+<div class="trace">356: DLL::GetFunction::GetFunction(name = `MFShutdown`) p = 0x7ff825a36ef0</div>
+<div class="trace">357: DLL::GetFunction::GetFunction(name = `MFCreateTranscodeTopology`) p = 0x7ff80c40fe00</div>
+<div class="trace">357: DLL::GetFunction::GetFunction(name = `MFCreateSourceResolver`) p = 0x7ff825a02d60</div>
+<div class="trace">357: DLL::GetFunction::GetFunction(name = `MFCreateAttributes`) p = 0x7ff825a33550</div>
+<div class="trace">357: DLL::GetFunction::GetFunction(name = `MFCreateMediaType`) p = 0x7ff825a29720</div>
+<div class="trace">358: DLL::GetFunction::GetFunction(name = `MFCreateAsyncResult`) p = 0x7ff8258fac80</div>
+<div class="trace">358: DLL::GetFunction::GetFunction(name = `MFInvokeCallback`) p = 0x7ff8258f2940</div>
+<div class="trace">358: DLL::GetFunction::GetFunction(name = `MFCreateMemoryBuffer`) p = 0x7ff825a31bb0</div>
+<div class="trace">358: DLL::GetFunction::GetFunction(name = `MFCreateSample`) p = 0x7ff825a17f10</div>
+<div class="trace">359: DLL::GetFunction::GetFunction(name = `MFFrameRateToAverageTimePerFrame`) p = 0x7ff825ac95a0</div>
+<div class="trace">363: DLL::GetFunction::GetFunction(name = `MFCreateMediaSession`) p = 0x7ff826b509b0</div>
+<div class="trace">363: DLL::GetFunction::GetFunction(name = `MFCreateTranscodeProfile`) p = 0x7ff80c3e8750</div>
+<div class="trace">363: DLL::GetFunction::GetFunction(name = `MFTranscodeGetAudioOutputAvailableTypes`) p = 0x7ff80c411340</div>
+<div class="trace">363: DLL::GetFunction::GetFunction(name = `MFGetService`) p = 0x7ff826b6b410</div>
+<div class="trace">363: DLL::GetFunction::GetFunction(name = `MFCreateTopology`) p = 0x7ff826b60950</div>
+<div class="trace">364: DLL::GetFunction::GetFunction(name = `MFCreateTopologyNode`) p = 0x7ff826b74830</div>
+<div class="trace">364: DLL::GetFunction::GetFunction(name = `MFCreateAudioRendererActivate`) p = 0x7ff826b9d960</div>
+<div class="trace">364: DLL::GetFunction::GetFunction(name = `MFCreateVideoRendererActivate`) p = 0x7fffe9ee3490</div>
+<div class="trace">364: DLL::GetFunction::GetFunction(name = `MFCreateSourceReaderFromURL`) p = 0x7fffd3ff8bc0</div>
+<div class="trace">364: DLL::GetFunction::GetFunction(name = `MFCreateSourceReaderFromByteStream`) p = 0x7fffd3ff8b90</div>
+<div class="trace">365: DLL::GetFunction::GetFunction(name = `MFCreateSinkWriterFromURL`) p = 0x7fffd3ff89f0</div>
+<div class="info">365: ℹ️ Codec_MF initialized</div>
+<div class="trace">365: CAudioFormat::init()</div>
+<div class="info">365: ℹ️ CAudioFormat initialized</div>
+<div class="trace">366: CAudio_X28::init()</div>
+<div class="debug">376: 💠 Created Audio[0(null)]</div>
+<div class="info">376: ℹ️ CAudio_X28 initialized</div>
+<div class="trace">377: CFFT::init()</div>
+<div class="info">378: ℹ️ CFFT initialized</div>
+<div class="trace">378: CNetwork::init()</div>
+<div class="info">380: ℹ️ CNetwork initialized</div>
+<div class="trace">380: CToastNotification::init()</div>
+<div class="info">380: ℹ️ ToastNotification is available</div>
+<div class="info">381: ℹ️ CToastNotification initialized</div>
+<div class="trace">381: CGraphics_D3D11::init()</div>
+<div class="trace">381: D3D11Device::D3D11Device()</div>
+<div class="trace">381: DLL::LoadSystemLibrary(library = `d3d11.dll`)</div>
+<div class="trace">381: DLL::GetFunction::GetFunction(name = `D3D11CreateDevice`) p = 0x7ff82deecfe0</div>
+<div class="trace">381: DLL::LoadSystemLibrary(library = `dxgi.dll`)</div>
+<div class="trace">382: DLL::GetFunction::GetFunction(name = `CreateDXGIFactory1`) p = 0x7ff82f86d380</div>
+<div class="trace">382: DLL::LoadSystemLibrary(library = `D3D11_1SDKLayers.dll`)</div>
+<div class="info">387: ℹ️ DXGIFactory5 is available</div>
+<div class="trace">387: GetAdapters()</div>
+<div class="info">388: ℹ️ IDXGIAdapter [0]: Intel(R) UHD Graphics 620 (Dedicated GPU memory: 128MiB, System: 0B, Shared: 3.93GiB) (supports Direct3D 11.1 runtime)</div>
+<div class="trace">388: CheckHardwareDevice()</div>
+<div class="info">418: ℹ️ - [D3D_DRIVER_TYPE_HARDWARE] selected: D3D_FEATURE_LEVEL_12_1 (max: D3D_FEATURE_LEVEL_12_1)</div>
+<div class="debug">424: ℹ️ IDXGIAdapter [1] is Microsoft Basics Display Driver (skipped)</div>
+<div class="info">424: ℹ️ 1 adapters available</div>
+<div class="trace">424: GetWARPFeatureLevel()</div>
+<div class="info">432: ℹ️ [D3D_DRIVER_TYPE_WARP] supports D3D_FEATURE_LEVEL_11_1</div>
+<div class="trace">432: GetREFFeatureLevel()</div>
+<div class="info">433: ℹ️ [D3D_DRIVER_TYPE_REFERENCE] supports D3D_FEATURE_LEVEL_10_1</div>
+<div class="trace">433: D3D11Device::createDevice(targetDevice = 0, targetAdapterIndex = none, deviceFlags = 0)</div>
+<div class="info">433: ℹ️ selectedAdapterIndex: 0 (Intel(R) UHD Graphics 620)</div>
+<div class="info">463: ✅ D3D11 device created. Driver type: Hardware (D3D_FEATURE_LEVEL_12_1)</div>
+<div class="trace">463: D3D11SwapChain::D3D11SwapChain()</div>
+<div class="trace">463: Use flip model = true</div>
+<div class="trace">463: DLL::LoadSystemLibrary(library = `User32.dll`)</div>
+<div class="trace">463: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `GetDpiForWindow`) p = 0x7ff831e11d50</div>
+<div class="trace">463: IDXGIFactory2::CreateSwapChainForHwnd()</div>
+<div class="trace">464: IDXGIFactory1::MakeWindowAssociation()</div>
+<div class="trace">464: D3D11RenderTarget::D3D11RenderTarget()</div>
+<div class="trace">464: D3D11RenderTarget::m_backBuffer.size = (800, 600)</div>
+<div class="trace">464: CreateRTVFromBackBuffer()</div>
+<div class="trace">464: CreateRenderTarget2D(size = (800, 600), sampleCount = 4)</div>
+<div class="trace">465: CShader_D3D11::init()</div>
+<div class="trace">466: DLL::LoadSystemLibrary(library = `d3dcompiler_47.dll`)</div>
+<div class="info">467: `d3dcompiler_47.dll` found</div>
+<div class="trace">468: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `D3DCompile2`) p = 0x7ff82db2e290</div>
+<div class="info">468: HLSL compiler is available</div>
+<div class="debug">468: 💠 Created VertexShader[0(null)]</div>
+<div class="debug">468: 💠 Created PixelShader[0(null)]</div>
+<div class="debug">468: 📤 BinaryReader: Opened resource &quot;/engine/shader/copy.ps&quot; size: 616B</div>
+<div class="debug">468: CShader_D3D11::createVSFromFile(): `/engine/shader/copy.ps` is a precompiled shader file</div>
+<div class="debug">469: 💠 Created PixelShader[1] </div>
+<div class="debug">469: 📥 BinaryReader: Closed resource &quot;/engine/shader/copy.ps&quot;</div>
+<div class="debug">469: 📤 BinaryReader: Opened resource &quot;/engine/shader/gaussian_blur_9.ps&quot; size: 1.36KiB</div>
+<div class="debug">469: CShader_D3D11::createVSFromFile(): `/engine/shader/gaussian_blur_9.ps` is a precompiled shader file</div>
+<div class="debug">469: 💠 Created PixelShader[2] </div>
+<div class="debug">469: 📥 BinaryReader: Closed resource &quot;/engine/shader/gaussian_blur_9.ps&quot;</div>
+<div class="info">469: ℹ️ CShader_D3D11 initialized</div>
+<div class="trace">469: CTexture_D3D11::init()</div>
+<div class="info">469: 4x MSAA support:</div>
+<div class="debug">470: R8G8B8A8_Unorm ✔</div>
+<div class="debug">470: R8G8B8A8_Unorm_SRGB ✔</div>
+<div class="debug">470: R16G16_Float ✔</div>
+<div class="debug">470: R32_Float ✔</div>
+<div class="debug">470: R10G10B10A2_Unorm ✔</div>
+<div class="debug">470: R11G11B10_UFloat ✔</div>
+<div class="debug">470: R16G16B16A16_Float ✔</div>
+<div class="debug">470: R32G32_Float ✔</div>
+<div class="debug">470: R32G32B32A32_Float ✔</div>
+<div class="debug">471: 💠 Created Texture[0(null)]</div>
+<div class="info">471: ℹ️ CTexture_D3D11 initialized</div>
+<div class="trace">471: CRenderer2D_D3D11::init()</div>
+<div class="debug">471: 📤 BinaryReader: Opened resource &quot;/engine/shader/sprite.vs&quot; size: 936B</div>
+<div class="debug">471: CShader_D3D11::createVSFromFile(): `/engine/shader/sprite.vs` is a precompiled shader file</div>
+<div class="debug">471: 💠 Created VertexShader[1] </div>
+<div class="debug">471: 📥 BinaryReader: Closed resource &quot;/engine/shader/sprite.vs&quot;</div>
+<div class="debug">471: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_resolve.vs&quot; size: 1KiB</div>
+<div class="debug">472: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_resolve.vs` is a precompiled shader file</div>
+<div class="debug">472: 💠 Created VertexShader[2] </div>
+<div class="debug">472: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_resolve.vs&quot;</div>
+<div class="debug">472: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_draw.vs&quot; size: 804B</div>
+<div class="debug">472: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_draw.vs` is a precompiled shader file</div>
+<div class="debug">472: 💠 Created VertexShader[3] </div>
+<div class="debug">472: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_draw.vs&quot;</div>
+<div class="debug">473: 📤 BinaryReader: Opened resource &quot;/engine/shader/shape.ps&quot; size: 708B</div>
+<div class="debug">473: CShader_D3D11::createVSFromFile(): `/engine/shader/shape.ps` is a precompiled shader file</div>
+<div class="debug">473: 💠 Created PixelShader[3] </div>
+<div class="debug">473: 📥 BinaryReader: Closed resource &quot;/engine/shader/shape.ps&quot;</div>
+<div class="debug">473: 📤 BinaryReader: Opened resource &quot;/engine/shader/texture.ps&quot; size: 884B</div>
+<div class="debug">473: CShader_D3D11::createVSFromFile(): `/engine/shader/texture.ps` is a precompiled shader file</div>
+<div class="debug">474: 💠 Created PixelShader[4] </div>
+<div class="debug">474: 📥 BinaryReader: Closed resource &quot;/engine/shader/texture.ps&quot;</div>
+<div class="debug">474: 📤 BinaryReader: Opened resource &quot;/engine/shader/square_dot.ps&quot; size: 1.13KiB</div>
+<div class="debug">474: CShader_D3D11::createVSFromFile(): `/engine/shader/square_dot.ps` is a precompiled shader file</div>
+<div class="debug">474: 💠 Created PixelShader[5] </div>
+<div class="debug">474: 📥 BinaryReader: Closed resource &quot;/engine/shader/square_dot.ps&quot;</div>
+<div class="debug">474: 📤 BinaryReader: Opened resource &quot;/engine/shader/round_dot.ps&quot; size: 1.14KiB</div>
+<div class="debug">474: CShader_D3D11::createVSFromFile(): `/engine/shader/round_dot.ps` is a precompiled shader file</div>
+<div class="debug">475: 💠 Created PixelShader[6] </div>
+<div class="debug">475: 📥 BinaryReader: Closed resource &quot;/engine/shader/round_dot.ps&quot;</div>
+<div class="debug">475: 📤 BinaryReader: Opened resource &quot;/engine/shader/sdf.ps&quot; size: 1.28KiB</div>
+<div class="debug">475: CShader_D3D11::createVSFromFile(): `/engine/shader/sdf.ps` is a precompiled shader file</div>
+<div class="debug">475: 💠 Created PixelShader[7] </div>
+<div class="debug">475: 📥 BinaryReader: Closed resource &quot;/engine/shader/sdf.ps&quot;</div>
+<div class="debug">476: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_resolve.ps&quot; size: 872B</div>
+<div class="debug">476: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_resolve.ps` is a precompiled shader file</div>
+<div class="debug">476: 💠 Created PixelShader[8] </div>
+<div class="debug">476: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_resolve.ps&quot;</div>
+<div class="debug">476: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_draw.ps&quot; size: 664B</div>
+<div class="debug">476: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_draw.ps` is a precompiled shader file</div>
+<div class="debug">476: 💠 Created PixelShader[9] </div>
+<div class="debug">477: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_draw.ps&quot;</div>
+<div class="debug">477: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/256.png&quot; size: 5.51KiB</div>
+<div class="debug">482: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/256.png&quot;</div>
+<div class="debug">482: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/128.png&quot; size: 2.5KiB</div>
+<div class="debug">483: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/128.png&quot;</div>
+<div class="debug">483: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/64.png&quot; size: 1.34KiB</div>
+<div class="debug">484: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/64.png&quot;</div>
+<div class="debug">484: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/32.png&quot; size: 617B</div>
+<div class="debug">484: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/32.png&quot;</div>
+<div class="debug">484: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/16.png&quot; size: 263B</div>
+<div class="debug">484: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/16.png&quot;</div>
+<div class="debug">484: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/8.png&quot; size: 140B</div>
+<div class="debug">485: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/8.png&quot;</div>
+<div class="debug">485: 💠 Created Texture[1] (type: Normal, size: 256x256, format: R8G8B8A8_Unorm)</div>
+<div class="info">485: ℹ️ CRenderer2D_D3D11 initialized</div>
+<div class="info">485: ℹ️ CGraphics_D3D11 initialized</div>
+<div class="trace">485: CScreenCapture::init()</div>
+<div class="debug">485: Default Screenshot directory: &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Screenshot/&quot;</div>
+<div class="info">485: ℹ️ CScreenCapture initialized</div>
+<div class="trace">485: CFont::init()</div>
+<div class="debug">489: 💠 Created Font[0(null)]</div>
+<div class="info">489: ℹ️ CFont initialized</div>
+<div class="trace">489: CSDFFont::init()</div>
+<div class="debug">489: 💠 Created SDFFont[0(null)]</div>
+<div class="info">489: ℹ️ CSDFFont initialized</div>
+<div class="trace">489: CGUI::init()</div>
+<div class="debug">490: 💠 Created Font[1] (`M+ 1p medium` size: 20)</div>
+<div class="info">490: ℹ️ CGUI initialized</div>
+<div class="trace">491: CEffect::init()</div>
+<div class="debug">491: 💠 Created Effect[0(null)]</div>
+<div class="info">491: ℹ️ CEffect initialized</div>
+<div class="trace">491: CPrint::init()</div>
+<div class="debug">492: 💠 Created Font[2] (`M+ 1p medium` size: 16)</div>
+<div class="info">492: ℹ️ CPrint initialized</div>
+<div class="trace">492: CAsset::init()</div>
+<div class="info">492: ℹ️ Asset initialized</div>
+<div class="info">493: ✅ Siv3D engine setup completed</div>
+<div class="trace">493: MainThread</div>
+<hr width="99%"><div class="trace">493: CScript::init()</div>
+<div class="debug">572: 💠 Created Script[0(null)]</div>
+<div class="info">572: ℹ️ CScript initialized</div>
+<div class="trace">573: D3D11RenderTarget::resizeScene(sceneSize = (1500, 800))</div>
+<div class="trace">573: CreateRenderTarget2D(size = (1500, 800), sampleCount = 4)</div>
+<div class="trace">575: CWindow::resizeClient(size = (1500, 800))</div>
+<div class="trace">588: CWindow::updateWindowBounds(rect = (10, 0, 1516, 839))</div>
+<div class="trace">588: WM_SIZE</div>
+<div class="trace">589: CWindow::updateWindowBounds(rect = (10, 0, 1516, 839))</div>
+<div class="trace">589: CWindow::requestBackBufferResizing()</div>
+<div class="trace">589: CWindow::m_backBufferResizingRequest = (1500, 800)</div>
+<div class="trace">601: WM_PAINT</div>
+<div class="trace">602: WM_SIZE</div>
+<div class="trace">602: CWindow::updateWindowBounds(rect = (10, 0, 1516, 839))</div>
+<div class="trace">602: CWindow::requestBackBufferResizing()</div>
+<div class="trace">603: CWindow::m_backBufferResizingRequest = (1500, 800)</div>
+<div class="trace">605: CWindow::updateWindowBounds(rect = (10, 0, 1516, 839))</div>
+<div class="trace">633: WM_PAINT</div>
+<div class="debug">633: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/blocks.csv&quot; size: 6.03KiB</div>
+<div class="debug">634: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/blocks.csv&quot;</div>
+<div class="debug">742: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemies.csv&quot; size: 1.28KiB</div>
+<div class="debug">742: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemies.csv&quot;</div>
+<div class="debug">771: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">772: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">772: 💠 Created Texture[2] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">773: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">773: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">773: 💠 Created Texture[3] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">774: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">775: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">775: 💠 Created Texture[4] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">776: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">777: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">777: 💠 Created Texture[5] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">779: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">779: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">780: 💠 Created Texture[6] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">781: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">781: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">781: 💠 Created Texture[7] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">782: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">783: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">783: 💠 Created Texture[8] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">784: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">785: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">785: 💠 Created Texture[9] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">786: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">787: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">787: 💠 Created Texture[10] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">788: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">788: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">789: 💠 Created Texture[11] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">789: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">790: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">790: 💠 Created Texture[12] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">791: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">792: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">793: 💠 Created Texture[13] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">794: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">794: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">795: 💠 Created Texture[14] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">796: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">796: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">797: 💠 Created Texture[15] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">797: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">798: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">798: 💠 Created Texture[16] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">798: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">799: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">799: 💠 Created Texture[17] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">800: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">800: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">801: 💠 Created Texture[18] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">801: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">802: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">802: 💠 Created Texture[19] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">802: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">803: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">803: 💠 Created Texture[20] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">804: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">805: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">805: 💠 Created Texture[21] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">806: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">806: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">806: 💠 Created Texture[22] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">807: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">807: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">808: 💠 Created Texture[23] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">808: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">809: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">809: 💠 Created Texture[24] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">810: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">811: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">811: 💠 Created Texture[25] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">812: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">812: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">813: 💠 Created Texture[26] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">813: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">813: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">814: 💠 Created Texture[27] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">814: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">815: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">815: 💠 Created Texture[28] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">816: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">816: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">816: 💠 Created Texture[29] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">817: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">817: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">818: 💠 Created Texture[30] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">818: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">819: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">819: 💠 Created Texture[31] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">819: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">820: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">820: 💠 Created Texture[32] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">820: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">821: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">821: 💠 Created Texture[33] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">822: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">822: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">822: 💠 Created Texture[34] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">823: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">823: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">823: 💠 Created Texture[35] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">824: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">824: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">825: 💠 Created Texture[36] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">825: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">826: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">827: 💠 Created Texture[37] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">827: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">828: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">828: 💠 Created Texture[38] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">829: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">829: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">829: 💠 Created Texture[39] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">830: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">830: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">831: 💠 Created Texture[40] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">831: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">831: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">832: 💠 Created Texture[41] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">832: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">833: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">833: 💠 Created Texture[42] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">833: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">834: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">834: 💠 Created Texture[43] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">834: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">835: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">835: 💠 Created Texture[44] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">836: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">836: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">836: 💠 Created Texture[45] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">837: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">837: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">837: 💠 Created Texture[46] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">838: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">838: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">838: 💠 Created Texture[47] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">839: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">839: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">839: 💠 Created Texture[48] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">840: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">840: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">840: 💠 Created Texture[49] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">841: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/scores.txt&quot; size: 55B</div>
+<div class="debug">842: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/scores.txt&quot;</div>
+<div class="debug">843: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/background1.png&quot; size: 160KiB</div>
+<div class="debug">903: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/background1.png&quot;</div>
+<div class="debug">904: 💠 Created Texture[50] (type: Normal, size:1201x802, format: R8G8B8A8_Unorm)</div>
+<div class="debug">905: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/background2.png&quot; size: 160KiB</div>
+<div class="debug">959: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/background2.png&quot;</div>
+<div class="debug">960: 💠 Created Texture[51] (type: Normal, size:1201x802, format: R8G8B8A8_Unorm)</div>
+<div class="debug">961: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/background3.png&quot; size: 376KiB</div>
+<div class="debug">1009: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/background3.png&quot;</div>
+<div class="debug">1010: 💠 Created Texture[52] (type: Normal, size:1200x700, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1011: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/background4.png&quot; size: 212KiB</div>
+<div class="debug">1060: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/background4.png&quot;</div>
+<div class="debug">1068: 💠 Created Texture[53] (type: Normal, size:1200x700, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1070: 💠 Created Font[3] (`M+ 1p regular` size: 30)</div>
+<div class="debug">1071: 💠 Created Font[4] (`M+ 1p regular` size: 120)</div>
+<div class="debug">1072: 💠 Created Font[5] (`M+ 1p regular` size: 80)</div>
+<div class="debug">1073: 💠 Created Font[6] (`M+ 1p regular` size: 80)</div>
+<div class="debug">1075: 💠 Created Font[7] (`M+ 1p regular` size: 70)</div>
+<div class="debug">1076: 💠 Created Font[8] (`M+ 1p regular` size: 60)</div>
+<div class="debug">1077: 💠 Created Font[9] (`M+ 1p regular` size: 60)</div>
+<div class="debug">1079: 💠 Created Font[10] (`M+ 1p regular` size: 60)</div>
+<div class="debug">1080: 💠 Created Font[11] (`M+ 1p regular` size: 60)</div>
+<div class="debug">1081: 💠 Created Font[12] (`M+ 1p regular` size: 60)</div>
+<div class="debug">1082: 💠 Created Font[13] (`M+ 1p regular` size: 60)</div>
+<div class="debug">1084: 💠 Created Font[14] (`M+ 1p regular` size: 30)</div>
+<div class="debug">1084: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/rabbit.png&quot; size: 1.32KiB</div>
+<div class="debug">1084: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/rabbit.png&quot;</div>
+<div class="debug">1085: 💠 Created Texture[54] (type: Normal, size:28x38, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1085: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/rabbit.png&quot; size: 1.32KiB</div>
+<div class="debug">1086: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/rabbit.png&quot;</div>
+<div class="debug">1086: 💠 Created Texture[55] (type: Normal, size:28x38, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1087: 💠 Created Font[15] (`M+ 1p regular` size: 50)</div>
+<div class="debug">1088: 💠 Created Font[16] (`M+ 1p regular` size: 40)</div>
+<div class="debug">1089: 💠 Created Font[17] (`M+ 1p regular` size: 200)</div>
+<div class="debug">1090: 💠 Created Font[18] (`M+ 1p regular` size: 20)</div>
+<div class="debug">1091: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/trophy.png&quot; size: 8.89KiB</div>
+<div class="debug">1092: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/trophy.png&quot;</div>
+<div class="debug">1093: 💠 Created Texture[56] (type: Normal, size:90x100, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1093: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/trophy.png&quot; size: 8.89KiB</div>
+<div class="debug">1094: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/trophy.png&quot;</div>
+<div class="debug">1095: 💠 Created Texture[57] (type: Normal, size:90x100, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1095: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/trophy.png&quot; size: 8.89KiB</div>
+<div class="debug">1096: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/trophy.png&quot;</div>
+<div class="debug">1097: 💠 Created Texture[58] (type: Normal, size:90x100, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1097: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/trophy.png&quot; size: 8.89KiB</div>
+<div class="debug">1098: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/trophy.png&quot;</div>
+<div class="debug">1099: 💠 Created Texture[59] (type: Normal, size:90x100, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1099: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/trophy.png&quot; size: 8.89KiB</div>
+<div class="debug">1100: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/trophy.png&quot;</div>
+<div class="debug">1101: 💠 Created Texture[60] (type: Normal, size:90x100, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1102: 💠 Created Font[19] (`M+ 1p regular` size: 40)</div>
+<div class="debug">1103: 💠 Created Font[20] (`M+ 1p heavy` size: 40)</div>
+<div class="debug">1104: 💠 Created Font[21] (`M+ 1p regular` size: 30)</div>
+<div class="trace">1105: CreateRenderTarget2D(size = (1500, 800), sampleCount = 1)</div>
+<div class="trace">1115: D3D11RenderTarget::resizeBuffers(backBufferSize = (1500, 800), sceneSize = (1500, 800))</div>
+<div class="trace">1116: D3D11RenderTarget::m_backBuffer.size = (1500, 800)</div>
+<div class="trace">1116: CreateRTVFromBackBuffer()</div>
+<div class="debug">1162: 💠 Created Texture[61] (type: Dynamic, size: 2048x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1163: ℹ️ Created font texture (size: 2048x256)</div>
+<div class="debug">1186: 💠 Created Texture[62] (type: Dynamic, size: 2048x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1187: ℹ️ Created font texture (size: 2048x256)</div>
+<div class="debug">1214: 💠 Created Texture[63] (type: Dynamic, size: 2048x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1214: ℹ️ Created font texture (size: 2048x256)</div>
+<div class="debug">1869: 💠 Created Texture[64] (type: Dynamic, size: 2048x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1869: ℹ️ Created font texture (size: 2048x256)</div>
+<div class="debug">1913: 💠 Created Texture[65] (type: Dynamic, size: 1536x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1913: ℹ️ Created font texture (size: 1536x256)</div>
+<div class="debug">1956: 💠 Created Texture[66] (type: Dynamic, size: 1536x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">1956: ℹ️ Created font texture (size: 1536x256)</div>
+<div class="debug">2008: 💠 Created Texture[67] (type: Dynamic, size: 1536x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">2008: ℹ️ Created font texture (size: 1536x256)</div>
+<div class="debug">2067: 💠 Created Texture[68] (type: Dynamic, size: 1536x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">2068: ℹ️ Created font texture (size: 1536x256)</div>
+<div class="debug">2126: 💠 Created Texture[69] (type: Dynamic, size: 1536x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">2126: ℹ️ Created font texture (size: 1536x256)</div>
+<div class="debug">2171: 💠 Created Texture[70] (type: Dynamic, size: 1536x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">2171: ℹ️ Created font texture (size: 1536x256)</div>
+<div class="debug">2211: 💠 Created Texture[71] (type: Dynamic, size: 1536x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">2211: ℹ️ Created font texture (size: 1536x256)</div>
+<div class="debug">2230: 💠 Created Texture[72] (type: Dynamic, size: 768x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">2230: ℹ️ Created font texture (size: 768x256)</div>
+<div class="debug">2250: 💠 Created Texture[73] (type: Dynamic, size: 768x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">2250: ℹ️ Created font texture (size: 768x256)</div>
+<div class="trace">2727: WM_CHAR</div>
+<div class="trace">2789: WM_CHAR</div>
+<div class="trace">2972: WM_CHAR</div>
+<div class="trace">3058: WM_CHAR</div>
+<div class="trace">3133: WM_CHAR</div>
+<div class="trace">3217: WM_CHAR</div>
+<div class="debug">5163: ℹ️ Resized D3D11SpriteBatch::m_vertexArray (size: 4096 -&gt; 8192)</div>
+<div class="debug">5169: ℹ️ Resized D3D11SpriteBatch::m_vertexArray (size: 8192 -&gt; 16384)</div>
+<div class="debug">5236: 💠 Created Texture[74] (type: Dynamic, size: 768x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">5237: ℹ️ Created font texture (size: 768x256)</div>
+<div class="debug">5274: 💠 Created Texture[75] (type: Dynamic, size: 1024x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">5274: ℹ️ Created font texture (size: 1024x256)</div>
+<div class="trace">6145: WM_CHAR</div>
+<div class="trace">6344: WM_CHAR</div>
+<div class="trace">6861: WM_CHAR</div>
+<div class="trace">6899: WM_CHAR</div>
+<div class="trace">6929: WM_CHAR</div>
+<div class="trace">6973: WM_CHAR</div>
+<div class="trace">7551: WM_CHAR</div>
+<div class="trace">7971: WM_CHAR</div>
+<div class="trace">8270: WM_CHAR</div>
+<div class="trace">8783: WM_CHAR</div>
+<div class="trace">8814: WM_CHAR</div>
+<div class="trace">8847: WM_CHAR</div>
+<div class="trace">8878: WM_CHAR</div>
+<div class="trace">8911: WM_CHAR</div>
+<div class="trace">8940: WM_CHAR</div>
+<div class="trace">8972: WM_CHAR</div>
+<div class="trace">9008: WM_CHAR</div>
+<div class="trace">9042: WM_CHAR</div>
+<div class="trace">9077: WM_CHAR</div>
+<div class="trace">9111: WM_CHAR</div>
+<div class="trace">9142: WM_CHAR</div>
+<div class="trace">9174: WM_CHAR</div>
+<div class="trace">9204: WM_CHAR</div>
+<div class="trace">9612: CWindow::updateWindowBounds(rect = (10, 16, 1516, 839))</div>
+<div class="trace">9615: CWindow::updateWindowBounds(rect = (10, 27, 1516, 839))</div>
+<div class="trace">9633: CWindow::updateWindowBounds(rect = (10, 40, 1516, 839))</div>
+<div class="trace">9635: CWindow::updateWindowBounds(rect = (10, 49, 1516, 839))</div>
+<div class="trace">9689: CWindow::updateWindowBounds(rect = (10, 55, 1516, 839))</div>
+<div class="trace">9694: CWindow::updateWindowBounds(rect = (10, 59, 1516, 839))</div>
+<div class="trace">9698: CWindow::updateWindowBounds(rect = (10, 60, 1516, 839))</div>
+<div class="trace">9708: CWindow::updateWindowBounds(rect = (10, 61, 1516, 839))</div>
+<div class="trace">9711: CWindow::updateWindowBounds(rect = (10, 62, 1516, 839))</div>
+<div class="trace">9999: WM_CHAR</div>
+<div class="trace">10029: WM_CHAR</div>
+<div class="trace">10066: WM_CHAR</div>
+<div class="trace">10246: WM_CHAR</div>
+<div class="trace">10760: WM_CHAR</div>
+<div class="trace">10790: WM_CHAR</div>
+<div class="trace">10821: WM_CHAR</div>
+<div class="trace">10851: WM_CHAR</div>
+<div class="trace">10887: WM_CHAR</div>
+<div class="trace">10919: WM_CHAR</div>
+<div class="trace">10950: WM_CHAR</div>
+<div class="trace">11154: WM_CHAR</div>
+<div class="trace">11449: WM_CHAR</div>
+<div class="trace">11838: WM_CHAR</div>
+<div class="trace">12367: WM_CHAR</div>
+<div class="trace">12400: WM_CHAR</div>
+<div class="trace">12428: WM_CHAR</div>
+<div class="trace">12461: WM_CHAR</div>
+<div class="trace">12493: WM_CHAR</div>
+<div class="trace">12525: WM_CHAR</div>
+<div class="trace">12557: WM_CHAR</div>
+<div class="trace">12588: WM_CHAR</div>
+<div class="trace">12619: WM_CHAR</div>
+<div class="trace">12650: WM_CHAR</div>
+<div class="trace">12683: WM_CHAR</div>
+<div class="trace">12714: WM_CHAR</div>
+<div class="trace">12745: WM_CHAR</div>
+<div class="trace">12780: WM_CHAR</div>
+<div class="trace">12809: WM_CHAR</div>
+<div class="trace">12841: WM_CHAR</div>
+<div class="trace">12872: WM_CHAR</div>
+<div class="trace">12903: WM_CHAR</div>
+<div class="trace">12935: WM_CHAR</div>
+<div class="trace">12967: WM_CHAR</div>
+<div class="trace">13001: WM_CHAR</div>
+<div class="trace">13034: WM_CHAR</div>
+<div class="trace">13066: WM_CHAR</div>
+<div class="trace">13096: WM_CHAR</div>
+<div class="trace">13129: WM_CHAR</div>
+<div class="trace">13161: WM_CHAR</div>
+<div class="trace">13192: WM_CHAR</div>
+<div class="trace">13226: WM_CHAR</div>
+<div class="trace">13488: WM_CHAR</div>
+<div class="trace">15565: WM_CHAR</div>
+<div class="trace">15793: WM_CHAR</div>
+<div class="trace">16224: WM_CHAR</div>
+<div class="trace">16748: WM_CHAR</div>
+<div class="trace">16780: WM_CHAR</div>
+<div class="trace">16811: WM_CHAR</div>
+<div class="trace">16842: WM_CHAR</div>
+<div class="trace">16874: WM_CHAR</div>
+<div class="trace">16905: WM_CHAR</div>
+<div class="trace">16937: WM_CHAR</div>
+<div class="trace">16968: WM_CHAR</div>
+<div class="trace">17001: WM_CHAR</div>
+<div class="trace">17032: WM_CHAR</div>
+<div class="trace">17062: WM_CHAR</div>
+<div class="trace">17093: WM_CHAR</div>
+<div class="trace">17127: WM_CHAR</div>
+<div class="trace">17162: WM_CHAR</div>
+<div class="trace">17193: WM_CHAR</div>
+<div class="trace">17227: WM_CHAR</div>
+<div class="trace">17256: WM_CHAR</div>
+<div class="trace">17287: WM_CHAR</div>
+<div class="trace">17318: WM_CHAR</div>
+<div class="trace">17350: WM_CHAR</div>
+<div class="trace">17384: WM_CHAR</div>
+<div class="trace">17421: WM_CHAR</div>
+<div class="trace">17455: WM_CHAR</div>
+<div class="trace">17487: WM_CHAR</div>
+<div class="trace">17519: WM_CHAR</div>
+<div class="trace">17551: WM_CHAR</div>
+<div class="trace">17582: WM_CHAR</div>
+<div class="trace">17615: WM_CHAR</div>
+<div class="trace">17647: WM_CHAR</div>
+<div class="trace">17677: WM_CHAR</div>
+<div class="trace">17708: WM_CHAR</div>
+<div class="trace">17740: WM_CHAR</div>
+<div class="trace">17772: WM_CHAR</div>
+<div class="trace">17803: WM_CHAR</div>
+<div class="trace">17834: WM_CHAR</div>
+<div class="trace">17864: WM_CHAR</div>
+<div class="trace">17897: WM_CHAR</div>
+<div class="trace">17930: WM_CHAR</div>
+<div class="trace">17960: WM_CHAR</div>
+<div class="trace">17992: WM_CHAR</div>
+<div class="trace">18023: WM_CHAR</div>
+<div class="trace">18054: WM_CHAR</div>
+<div class="trace">18086: WM_CHAR</div>
+<div class="trace">18121: WM_CHAR</div>
+<div class="trace">18151: WM_CHAR</div>
+<div class="trace">18181: WM_CHAR</div>
+<div class="trace">18214: WM_CHAR</div>
+<div class="trace">18246: WM_CHAR</div>
+<div class="trace">18278: WM_CHAR</div>
+<div class="trace">18309: WM_CHAR</div>
+<div class="trace">18341: WM_CHAR</div>
+<div class="trace">18373: WM_CHAR</div>
+<div class="trace">18403: WM_CHAR</div>
+<div class="trace">19021: WM_CHAR</div>
+<div class="trace">21914: WM_CHAR</div>
+<div class="trace">22428: WM_CHAR</div>
+<div class="trace">22459: WM_CHAR</div>
+<div class="trace">22490: WM_CHAR</div>
+<div class="trace">22521: WM_CHAR</div>
+<div class="trace">22552: WM_CHAR</div>
+<div class="trace">22589: WM_CHAR</div>
+<div class="trace">22623: WM_CHAR</div>
+<div class="trace">22629: WM_CHAR</div>
+<div class="trace">22993: WM_CHAR</div>
+<div class="trace">23506: WM_CHAR</div>
+<div class="trace">23538: WM_CHAR</div>
+<div class="trace">23570: WM_CHAR</div>
+<div class="trace">23591: WM_CHAR</div>
+<div class="trace">24117: WM_CHAR</div>
+<div class="trace">24239: WM_CHAR</div>
+<div class="trace">24771: WM_CHAR</div>
+<div class="trace">24801: WM_CHAR</div>
+<div class="trace">24833: WM_CHAR</div>
+<div class="trace">24865: WM_CHAR</div>
+<div class="trace">25117: WM_CHAR</div>
+<div class="trace">25631: WM_CHAR</div>
+<div class="trace">25661: WM_CHAR</div>
+<div class="trace">25693: WM_CHAR</div>
+<div class="trace">25730: WM_CHAR</div>
+<div class="trace">25763: WM_CHAR</div>
+<div class="trace">25799: WM_CHAR</div>
+<div class="trace">25831: WM_CHAR</div>
+<div class="trace">25863: WM_CHAR</div>
+<div class="trace">25893: WM_CHAR</div>
+<div class="trace">25924: WM_CHAR</div>
+<div class="trace">25959: WM_CHAR</div>
+<div class="trace">25989: WM_CHAR</div>
+<div class="trace">26020: WM_CHAR</div>
+<div class="trace">26052: WM_CHAR</div>
+<div class="trace">26083: WM_CHAR</div>
+<div class="trace">26115: WM_CHAR</div>
+<div class="trace">26147: WM_CHAR</div>
+<div class="trace">26180: WM_CHAR</div>
+<div class="trace">26212: WM_CHAR</div>
+<div class="trace">26243: WM_CHAR</div>
+<div class="trace">26275: WM_CHAR</div>
+<div class="trace">26307: WM_CHAR</div>
+<div class="trace">26338: WM_CHAR</div>
+<div class="trace">26369: WM_CHAR</div>
+<div class="trace">26401: WM_CHAR</div>
+<div class="trace">26432: WM_CHAR</div>
+<div class="trace">26464: WM_CHAR</div>
+<div class="trace">26495: WM_CHAR</div>
+<div class="trace">26530: WM_CHAR</div>
+<div class="trace">26564: WM_CHAR</div>
+<div class="trace">26595: WM_CHAR</div>
+<div class="trace">26628: WM_CHAR</div>
+<div class="trace">26659: WM_CHAR</div>
+<div class="trace">26691: WM_CHAR</div>
+<div class="trace">26722: WM_CHAR</div>
+<div class="trace">26752: WM_CHAR</div>
+<div class="trace">26785: WM_CHAR</div>
+<div class="trace">26820: WM_CHAR</div>
+<div class="trace">26857: WM_CHAR</div>
+<div class="trace">26868: WM_CHAR</div>
+<div class="trace">27381: WM_CHAR</div>
+<div class="trace">27412: WM_CHAR</div>
+<div class="trace">27444: WM_CHAR</div>
+<div class="trace">27478: WM_CHAR</div>
+<div class="trace">27510: WM_CHAR</div>
+<div class="trace">27540: WM_CHAR</div>
+<div class="trace">27571: WM_CHAR</div>
+<div class="trace">27606: WM_CHAR</div>
+<div class="trace">27642: WM_CHAR</div>
+<div class="trace">27669: WM_CHAR</div>
+<div class="trace">27699: WM_CHAR</div>
+<div class="trace">27731: WM_CHAR</div>
+<div class="trace">27763: WM_CHAR</div>
+<div class="trace">27766: WM_CHAR</div>
+<div class="trace">28293: WM_CHAR</div>
+<div class="trace">28325: WM_CHAR</div>
+<div class="trace">28351: WM_CHAR</div>
+<div class="trace">28389: WM_CHAR</div>
+<div class="trace">28419: WM_CHAR</div>
+<div class="trace">28451: WM_CHAR</div>
+<div class="trace">28483: WM_CHAR</div>
+<div class="trace">28513: WM_CHAR</div>
+<div class="trace">28548: WM_CHAR</div>
+<div class="trace">28580: WM_CHAR</div>
+<div class="trace">28610: WM_CHAR</div>
+<div class="trace">28641: WM_CHAR</div>
+<div class="trace">28665: WM_CHAR</div>
+<div class="trace">29195: WM_CHAR</div>
+<div class="trace">29228: WM_CHAR</div>
+<div class="trace">29258: WM_CHAR</div>
+<div class="trace">29291: WM_CHAR</div>
+<div class="trace">29293: WM_CHAR</div>
+<div class="trace">29804: WM_CHAR</div>
+<div class="trace">29834: WM_CHAR</div>
+<div class="trace">29867: WM_CHAR</div>
+<div class="trace">29898: WM_CHAR</div>
+<div class="trace">29931: WM_CHAR</div>
+<div class="trace">29968: WM_CHAR</div>
+<div class="trace">30004: WM_CHAR</div>
+<div class="trace">30038: WM_CHAR</div>
+<div class="trace">30068: WM_CHAR</div>
+<div class="trace">30099: WM_CHAR</div>
+<div class="trace">30133: WM_CHAR</div>
+<div class="trace">30164: WM_CHAR</div>
+<div class="trace">30196: WM_CHAR</div>
+<div class="trace">30228: WM_CHAR</div>
+<div class="trace">30259: WM_CHAR</div>
+<div class="trace">30292: WM_CHAR</div>
+<div class="trace">30324: WM_CHAR</div>
+<div class="trace">30354: WM_CHAR</div>
+<div class="trace">30385: WM_CHAR</div>
+<div class="trace">30418: WM_CHAR</div>
+<div class="trace">30449: WM_CHAR</div>
+<div class="trace">30481: WM_CHAR</div>
+<div class="trace">30513: WM_CHAR</div>
+<div class="trace">30544: WM_CHAR</div>
+<div class="trace">30579: WM_CHAR</div>
+<div class="trace">30608: WM_CHAR</div>
+<div class="trace">30640: WM_CHAR</div>
+<div class="trace">30672: WM_CHAR</div>
+<div class="trace">30701: WM_CHAR</div>
+<div class="trace">30734: WM_CHAR</div>
+<div class="trace">30768: WM_CHAR</div>
+<div class="trace">30770: WM_CHAR</div>
+<div class="trace">31023: WM_CHAR</div>
+<div class="trace">31550: WM_CHAR</div>
+<div class="trace">31581: WM_CHAR</div>
+<div class="trace">31610: WM_CHAR</div>
+<div class="trace">31642: WM_CHAR</div>
+<div class="trace">31672: WM_CHAR</div>
+<div class="trace">31706: WM_CHAR</div>
+<div class="trace">31737: WM_CHAR</div>
+<div class="trace">31767: WM_CHAR</div>
+<div class="trace">31800: WM_CHAR</div>
+<div class="trace">31832: WM_CHAR</div>
+<div class="trace">31866: WM_CHAR</div>
+<div class="trace">31896: WM_CHAR</div>
+<div class="trace">31927: WM_CHAR</div>
+<div class="trace">31959: WM_CHAR</div>
+<div class="trace">31990: WM_CHAR</div>
+<div class="trace">32022: WM_CHAR</div>
+<div class="trace">32054: WM_CHAR</div>
+<div class="trace">32093: WM_CHAR</div>
+<div class="trace">32128: WM_CHAR</div>
+<div class="trace">32151: WM_CHAR</div>
+<div class="trace">32663: WM_CHAR</div>
+<div class="trace">32681: WM_CHAR</div>
+<div class="trace">33213: WM_CHAR</div>
+<div class="trace">33244: WM_CHAR</div>
+<div class="trace">33275: WM_CHAR</div>
+<div class="trace">33307: WM_CHAR</div>
+<div class="trace">33340: WM_CHAR</div>
+<div class="trace">33371: WM_CHAR</div>
+<div class="trace">33403: WM_CHAR</div>
+<div class="trace">33437: WM_CHAR</div>
+<div class="trace">33467: WM_CHAR</div>
+<div class="trace">33499: WM_CHAR</div>
+<div class="trace">33530: WM_CHAR</div>
+<div class="trace">33565: WM_CHAR</div>
+<div class="trace">33593: WM_CHAR</div>
+<div class="trace">33625: WM_CHAR</div>
+<div class="trace">33658: WM_CHAR</div>
+<div class="trace">33678: WM_CHAR</div>
+<div class="trace">34200: WM_CHAR</div>
+<div class="trace">34236: WM_CHAR</div>
+<div class="trace">34269: WM_CHAR</div>
+<div class="trace">34298: WM_CHAR</div>
+<div class="trace">34330: WM_CHAR</div>
+<div class="trace">34361: WM_CHAR</div>
+<div class="trace">34395: WM_CHAR</div>
+<div class="trace">34426: WM_CHAR</div>
+<div class="trace">34458: WM_CHAR</div>
+<div class="trace">34489: WM_CHAR</div>
+<div class="trace">34520: WM_CHAR</div>
+<div class="trace">34552: WM_CHAR</div>
+<div class="trace">34583: WM_CHAR</div>
+<div class="trace">34615: WM_CHAR</div>
+<div class="trace">34645: WM_CHAR</div>
+<div class="trace">34678: WM_CHAR</div>
+<div class="trace">34709: WM_CHAR</div>
+<div class="trace">34740: WM_CHAR</div>
+<div class="trace">34772: WM_CHAR</div>
+<div class="trace">34803: WM_CHAR</div>
+<div class="trace">34834: WM_CHAR</div>
+<div class="trace">34867: WM_CHAR</div>
+<div class="trace">34899: WM_CHAR</div>
+<div class="trace">34929: WM_CHAR</div>
+<div class="trace">34960: WM_CHAR</div>
+<div class="trace">34994: WM_CHAR</div>
+<div class="trace">35027: WM_CHAR</div>
+<div class="trace">35059: WM_CHAR</div>
+<div class="trace">35090: WM_CHAR</div>
+<div class="trace">35121: WM_CHAR</div>
+<div class="trace">35152: WM_CHAR</div>
+<div class="trace">35184: WM_CHAR</div>
+<div class="trace">35216: WM_CHAR</div>
+<div class="trace">35253: WM_CHAR</div>
+<div class="trace">35289: WM_CHAR</div>
+<div class="trace">35370: WM_CHAR</div>
+<div class="trace">35881: WM_CHAR</div>
+<div class="trace">35912: WM_CHAR</div>
+<div class="trace">35943: WM_CHAR</div>
+<div class="trace">35978: WM_CHAR</div>
+<div class="trace">36010: WM_CHAR</div>
+<div class="trace">36041: WM_CHAR</div>
+<div class="trace">36075: WM_CHAR</div>
+<div class="trace">36106: WM_CHAR</div>
+<div class="trace">36138: WM_CHAR</div>
+<div class="trace">36169: WM_CHAR</div>
+<div class="trace">36202: WM_CHAR</div>
+<div class="trace">36235: WM_CHAR</div>
+<div class="trace">36268: WM_CHAR</div>
+<div class="trace">36303: WM_CHAR</div>
+<div class="trace">36339: WM_CHAR</div>
+<div class="trace">36372: WM_CHAR</div>
+<div class="trace">36406: WM_CHAR</div>
+<div class="trace">36437: WM_CHAR</div>
+<div class="trace">36470: WM_CHAR</div>
+<div class="trace">36502: WM_CHAR</div>
+<div class="trace">36533: WM_CHAR</div>
+<div class="trace">36566: WM_CHAR</div>
+<div class="trace">36600: WM_CHAR</div>
+<div class="trace">36631: WM_CHAR</div>
+<div class="trace">36661: WM_CHAR</div>
+<div class="trace">36692: WM_CHAR</div>
+<div class="trace">36724: WM_CHAR</div>
+<div class="trace">36755: WM_CHAR</div>
+<div class="trace">36788: WM_CHAR</div>
+<div class="trace">36819: WM_CHAR</div>
+<div class="trace">36849: WM_CHAR</div>
+<div class="trace">36881: WM_CHAR</div>
+<div class="trace">36912: WM_CHAR</div>
+<div class="trace">36945: WM_CHAR</div>
+<div class="trace">36976: WM_CHAR</div>
+<div class="trace">37010: WM_CHAR</div>
+<div class="trace">37039: WM_CHAR</div>
+<div class="trace">37070: WM_CHAR</div>
+<div class="trace">37103: WM_CHAR</div>
+<div class="trace">37137: WM_CHAR</div>
+<div class="trace">37168: WM_CHAR</div>
+<div class="trace">37199: WM_CHAR</div>
+<div class="trace">37231: WM_CHAR</div>
+<div class="trace">37264: WM_CHAR</div>
+<div class="trace">37297: WM_CHAR</div>
+<div class="trace">37328: WM_CHAR</div>
+<div class="trace">37361: WM_CHAR</div>
+<div class="trace">37399: WM_CHAR</div>
+<div class="trace">37431: WM_CHAR</div>
+<div class="trace">37465: WM_CHAR</div>
+<div class="trace">37500: WM_CHAR</div>
+<div class="trace">37529: WM_CHAR</div>
+<div class="trace">37560: WM_CHAR</div>
+<div class="trace">37593: WM_CHAR</div>
+<div class="trace">37625: WM_CHAR</div>
+<div class="trace">37657: WM_CHAR</div>
+<div class="trace">37688: WM_CHAR</div>
+<div class="trace">37721: WM_CHAR</div>
+<div class="trace">37751: WM_CHAR</div>
+<div class="trace">37783: WM_CHAR</div>
+<div class="trace">37819: WM_CHAR</div>
+<div class="trace">37852: WM_CHAR</div>
+<div class="trace">37880: WM_CHAR</div>
+<div class="trace">37912: WM_CHAR</div>
+<div class="trace">37944: WM_CHAR</div>
+<div class="trace">37977: WM_CHAR</div>
+<div class="trace">38008: WM_CHAR</div>
+<div class="trace">38039: WM_CHAR</div>
+<div class="trace">38069: WM_CHAR</div>
+<div class="trace">38101: WM_CHAR</div>
+<div class="trace">38132: WM_CHAR</div>
+<div class="trace">38164: WM_CHAR</div>
+<div class="trace">38200: WM_CHAR</div>
+<div class="trace">38231: WM_CHAR</div>
+<div class="trace">38263: WM_CHAR</div>
+<div class="trace">38294: WM_CHAR</div>
+<div class="trace">38325: WM_CHAR</div>
+<div class="trace">38357: WM_CHAR</div>
+<div class="trace">38388: WM_CHAR</div>
+<div class="trace">38423: WM_CHAR</div>
+<div class="trace">38458: WM_CHAR</div>
+<div class="trace">38494: WM_CHAR</div>
+<div class="trace">38526: WM_CHAR</div>
+<div class="trace">38560: WM_CHAR</div>
+<div class="trace">38591: WM_CHAR</div>
+<div class="trace">38621: WM_CHAR</div>
+<div class="trace">38655: WM_CHAR</div>
+<div class="trace">38687: WM_CHAR</div>
+<div class="trace">38719: WM_CHAR</div>
+<div class="trace">38750: WM_CHAR</div>
+<div class="trace">38783: WM_CHAR</div>
+<div class="trace">38783: WM_CHAR</div>
+<div class="trace">38946: WM_CHAR</div>
+<div class="trace">39461: WM_CHAR</div>
+<div class="trace">39497: WM_CHAR</div>
+<div class="trace">39534: WM_CHAR</div>
+<div class="trace">39569: WM_CHAR</div>
+<div class="trace">39600: WM_CHAR</div>
+<div class="trace">39631: WM_CHAR</div>
+<div class="trace">39664: WM_CHAR</div>
+<div class="trace">39696: WM_CHAR</div>
+<div class="trace">39726: WM_CHAR</div>
+<div class="trace">39758: WM_CHAR</div>
+<div class="trace">39789: WM_CHAR</div>
+<div class="trace">39821: WM_CHAR</div>
+<div class="trace">39853: WM_CHAR</div>
+<div class="trace">39884: WM_CHAR</div>
+<div class="trace">39916: WM_CHAR</div>
+<div class="trace">39947: WM_CHAR</div>
+<div class="trace">39979: WM_CHAR</div>
+<div class="trace">40011: WM_CHAR</div>
+<div class="trace">40042: WM_CHAR</div>
+<div class="trace">40075: WM_CHAR</div>
+<div class="trace">40105: WM_CHAR</div>
+<div class="trace">40138: WM_CHAR</div>
+<div class="trace">40169: WM_CHAR</div>
+<div class="trace">40200: WM_CHAR</div>
+<div class="trace">40231: WM_CHAR</div>
+<div class="trace">40263: WM_CHAR</div>
+<div class="trace">40296: WM_CHAR</div>
+<div class="trace">40331: WM_CHAR</div>
+<div class="trace">40362: WM_CHAR</div>
+<div class="trace">40396: WM_CHAR</div>
+<div class="trace">40425: WM_CHAR</div>
+<div class="trace">40428: WM_CHAR</div>
+<div class="trace">40950: WM_CHAR</div>
+<div class="trace">41466: WM_CHAR</div>
+<div class="trace">41498: WM_CHAR</div>
+<div class="trace">41528: WM_CHAR</div>
+<div class="trace">41560: WM_CHAR</div>
+<div class="trace">41595: WM_CHAR</div>
+<div class="trace">41631: WM_CHAR</div>
+<div class="trace">41666: WM_CHAR</div>
+<div class="trace">41697: WM_CHAR</div>
+<div class="trace">41730: WM_CHAR</div>
+<div class="trace">41760: WM_CHAR</div>
+<div class="trace">41792: WM_CHAR</div>
+<div class="trace">41825: WM_CHAR</div>
+<div class="trace">41856: WM_CHAR</div>
+<div class="trace">41888: WM_CHAR</div>
+<div class="trace">41919: WM_CHAR</div>
+<div class="trace">41950: WM_CHAR</div>
+<div class="trace">41982: WM_CHAR</div>
+<div class="trace">42014: WM_CHAR</div>
+<div class="trace">42045: WM_CHAR</div>
+<div class="trace">42076: WM_CHAR</div>
+<div class="trace">42084: WM_CHAR</div>
+<div class="trace">42540: WM_CHAR</div>
+<div class="trace">43067: WM_CHAR</div>
+<div class="trace">43098: WM_CHAR</div>
+<div class="trace">43130: WM_CHAR</div>
+<div class="trace">43160: WM_CHAR</div>
+<div class="trace">43191: WM_CHAR</div>
+<div class="trace">43224: WM_CHAR</div>
+<div class="trace">43255: WM_CHAR</div>
+<div class="trace">43287: WM_CHAR</div>
+<div class="trace">43318: WM_CHAR</div>
+<div class="trace">43349: WM_CHAR</div>
+<div class="trace">43380: WM_CHAR</div>
+<div class="trace">43412: WM_CHAR</div>
+<div class="trace">43445: WM_CHAR</div>
+<div class="trace">43479: WM_CHAR</div>
+<div class="trace">43510: WM_CHAR</div>
+<div class="trace">43541: WM_CHAR</div>
+<div class="trace">43571: WM_CHAR</div>
+<div class="trace">43603: WM_CHAR</div>
+<div class="trace">43634: WM_CHAR</div>
+<div class="trace">43667: WM_CHAR</div>
+<div class="trace">43700: WM_CHAR</div>
+<div class="trace">43737: WM_CHAR</div>
+<div class="trace">43771: WM_CHAR</div>
+<div class="trace">43803: WM_CHAR</div>
+<div class="trace">43835: WM_CHAR</div>
+<div class="trace">43864: WM_CHAR</div>
+<div class="trace">43898: WM_CHAR</div>
+<div class="trace">43930: WM_CHAR</div>
+<div class="trace">43961: WM_CHAR</div>
+<div class="trace">43992: WM_CHAR</div>
+<div class="trace">44025: WM_CHAR</div>
+<div class="trace">44058: WM_CHAR</div>
+<div class="trace">44090: WM_CHAR</div>
+<div class="trace">44119: WM_CHAR</div>
+<div class="trace">44150: WM_CHAR</div>
+<div class="trace">44180: WM_CHAR</div>
+<div class="trace">44212: WM_CHAR</div>
+<div class="trace">44245: WM_CHAR</div>
+<div class="trace">44278: WM_CHAR</div>
+<div class="trace">44308: WM_CHAR</div>
+<div class="trace">44339: WM_CHAR</div>
+<div class="trace">44370: WM_CHAR</div>
+<div class="trace">44398: WM_CHAR</div>
+<div class="trace">44485: WM_CHAR</div>
+<div class="trace">45017: WM_CHAR</div>
+<div class="trace">45051: WM_CHAR</div>
+<div class="trace">45070: WM_CHAR</div>
+<div class="trace">45585: WM_CHAR</div>
+<div class="trace">45595: WM_CHAR</div>
+<div class="trace">46124: WM_CHAR</div>
+<div class="trace">46156: WM_CHAR</div>
+<div class="trace">46189: WM_CHAR</div>
+<div class="trace">46218: WM_CHAR</div>
+<div class="trace">46233: WM_CHAR</div>
+<div class="trace">47223: WM_CHAR</div>
+<div class="trace">47250: WM_CHAR</div>
+<div class="trace">47273: WM_CHAR</div>
+<div class="trace">47305: WM_CHAR</div>
+<div class="trace">47329: WM_CHAR</div>
+<div class="trace">47355: WM_CHAR</div>
+<div class="trace">47388: WM_CHAR</div>
+<div class="trace">47418: WM_CHAR</div>
+<div class="trace">47427: WM_CHAR</div>
+<div class="trace">47954: WM_CHAR</div>
+<div class="trace">49309: CWindow::updateWindowBounds(rect = (8, 55, 1516, 839))</div>
+<div class="trace">49312: CWindow::updateWindowBounds(rect = (9, 56, 1516, 839))</div>
+<div class="trace">49798: CWindow::updateWindowBounds(rect = (10, 51, 1516, 839))</div>
+<div class="trace">49801: CWindow::updateWindowBounds(rect = (10, 48, 1516, 839))</div>
+<div class="trace">49809: CWindow::updateWindowBounds(rect = (10, 43, 1516, 839))</div>
+<div class="trace">49819: CWindow::updateWindowBounds(rect = (10, 39, 1516, 839))</div>
+<div class="trace">49830: CWindow::updateWindowBounds(rect = (10, 35, 1516, 839))</div>
+<div class="trace">49840: CWindow::updateWindowBounds(rect = (10, 34, 1516, 839))</div>
+<div class="trace">49850: CWindow::updateWindowBounds(rect = (10, 31, 1516, 839))</div>
+<div class="trace">49859: CWindow::updateWindowBounds(rect = (10, 29, 1516, 839))</div>
+<div class="trace">49870: CWindow::updateWindowBounds(rect = (10, 24, 1516, 839))</div>
+<div class="trace">49879: CWindow::updateWindowBounds(rect = (10, 22, 1516, 839))</div>
+<div class="trace">49888: CWindow::updateWindowBounds(rect = (10, 18, 1516, 839))</div>
+<div class="trace">49898: CWindow::updateWindowBounds(rect = (10, 15, 1516, 839))</div>
+<div class="trace">49908: CWindow::updateWindowBounds(rect = (10, 11, 1516, 839))</div>
+<div class="trace">49918: CWindow::updateWindowBounds(rect = (10, 10, 1516, 839))</div>
+<div class="trace">49929: CWindow::updateWindowBounds(rect = (10, 8, 1516, 839))</div>
+<div class="trace">49931: CWindow::updateWindowBounds(rect = (10, 9, 1516, 839))</div>
+<div class="trace">51255: WM_CHAR</div>
+<div class="trace">51764: WM_CHAR</div>
+<div class="trace">51800: WM_CHAR</div>
+<div class="trace">51834: WM_CHAR</div>
+<div class="trace">51850: WM_CHAR</div>
+<div class="trace">52364: WM_CHAR</div>
+<div class="trace">52879: WM_CHAR</div>
+<div class="trace">52909: WM_CHAR</div>
+<div class="trace">52939: WM_CHAR</div>
+<div class="trace">52971: WM_CHAR</div>
+<div class="trace">53003: WM_CHAR</div>
+<div class="trace">53021: WM_CHAR</div>
+<div class="trace">53551: WM_CHAR</div>
+<div class="trace">53579: WM_CHAR</div>
+<div class="trace">53610: WM_CHAR</div>
+<div class="trace">54023: WM_CHAR</div>
+<div class="trace">54551: WM_CHAR</div>
+<div class="trace">54582: WM_CHAR</div>
+<div class="trace">54615: WM_CHAR</div>
+<div class="trace">54646: WM_CHAR</div>
+<div class="trace">54679: WM_CHAR</div>
+<div class="trace">54709: WM_CHAR</div>
+<div class="trace">54740: WM_CHAR</div>
+<div class="trace">54773: WM_CHAR</div>
+<div class="trace">54803: WM_CHAR</div>
+<div class="trace">54836: WM_CHAR</div>
+<div class="trace">54869: WM_CHAR</div>
+<div class="trace">54900: WM_CHAR</div>
+<div class="trace">54932: WM_CHAR</div>
+<div class="trace">54965: WM_CHAR</div>
+<div class="trace">55000: WM_CHAR</div>
+<div class="trace">55033: WM_CHAR</div>
+<div class="trace">55062: WM_CHAR</div>
+<div class="trace">55094: WM_CHAR</div>
+<div class="trace">55125: WM_CHAR</div>
+<div class="trace">55160: WM_CHAR</div>
+<div class="trace">55191: WM_CHAR</div>
+<div class="trace">55225: WM_CHAR</div>
+<div class="trace">55265: WM_CHAR</div>
+<div class="trace">55298: WM_CHAR</div>
+<div class="trace">55330: WM_CHAR</div>
+<div class="trace">55360: WM_CHAR</div>
+<div class="trace">55392: WM_CHAR</div>
+<div class="trace">55423: WM_CHAR</div>
+<div class="trace">55454: WM_CHAR</div>
+<div class="trace">55487: WM_CHAR</div>
+<div class="trace">55517: WM_CHAR</div>
+<div class="trace">55550: WM_CHAR</div>
+<div class="trace">55582: WM_CHAR</div>
+<div class="trace">55613: WM_CHAR</div>
+<div class="trace">55645: WM_CHAR</div>
+<div class="trace">55675: WM_CHAR</div>
+<div class="trace">55707: WM_CHAR</div>
+<div class="trace">55739: WM_CHAR</div>
+<div class="trace">55771: WM_CHAR</div>
+<div class="trace">55802: WM_CHAR</div>
+<div class="trace">55835: WM_CHAR</div>
+<div class="trace">55867: WM_CHAR</div>
+<div class="trace">55886: WM_CHAR</div>
+<div class="trace">56300: WM_CHAR</div>
+<div class="trace">56820: WM_CHAR</div>
+<div class="trace">56844: WM_CHAR</div>
+<div class="trace">56880: WM_CHAR</div>
+<div class="trace">56912: WM_CHAR</div>
+<div class="trace">56943: WM_CHAR</div>
+<div class="trace">56975: WM_CHAR</div>
+<div class="trace">57007: WM_CHAR</div>
+<div class="trace">57038: WM_CHAR</div>
+<div class="trace">57070: WM_CHAR</div>
+<div class="trace">57104: WM_CHAR</div>
+<div class="trace">57137: WM_CHAR</div>
+<div class="trace">57168: WM_CHAR</div>
+<div class="trace">57198: WM_CHAR</div>
+<div class="trace">57231: WM_CHAR</div>
+<div class="trace">57263: WM_CHAR</div>
+<div class="trace">57477: CWindow::updateWindowBounds(rect = (13, 17, 1516, 839))</div>
+<div class="trace">57487: CWindow::updateWindowBounds(rect = (22, 30, 1516, 839))</div>
+<div class="trace">57495: CWindow::updateWindowBounds(rect = (22, 29, 1516, 839))</div>
+<div class="trace">57498: CWindow::updateWindowBounds(rect = (27, 34, 1516, 839))</div>
+<div class="trace">57507: CWindow::updateWindowBounds(rect = (36, 40, 1516, 839))</div>
+<div class="trace">57519: CWindow::updateWindowBounds(rect = (43, 47, 1516, 839))</div>
+<div class="trace">57521: CWindow::updateWindowBounds(rect = (50, 49, 1516, 839))</div>
+<div class="trace">57529: CWindow::updateWindowBounds(rect = (49, 48, 1516, 839))</div>
+<div class="trace">57548: CWindow::updateWindowBounds(rect = (51, 50, 1516, 839))</div>
+<div class="trace">57551: CWindow::updateWindowBounds(rect = (54, 54, 1516, 839))</div>
+<div class="trace">57563: CWindow::updateWindowBounds(rect = (54, 53, 1516, 839))</div>
+<div class="trace">57567: CWindow::updateWindowBounds(rect = (56, 54, 1516, 839))</div>
+<div class="trace">57578: CWindow::updateWindowBounds(rect = (57, 55, 1516, 839))</div>
+<div class="trace">57598: CWindow::updateWindowBounds(rect = (58, 56, 1516, 839))</div>
+<div class="trace">57607: CWindow::updateWindowBounds(rect = (60, 57, 1516, 839))</div>
+<div class="trace">57617: CWindow::updateWindowBounds(rect = (63, 59, 1516, 839))</div>
+<div class="trace">57628: CWindow::updateWindowBounds(rect = (66, 61, 1516, 839))</div>
+<div class="trace">57631: CWindow::updateWindowBounds(rect = (65, 61, 1516, 839))</div>
+<div class="trace">57637: CWindow::updateWindowBounds(rect = (70, 63, 1516, 839))</div>
+<div class="trace">57647: CWindow::updateWindowBounds(rect = (77, 66, 1516, 839))</div>
+<div class="trace">57658: CWindow::updateWindowBounds(rect = (83, 69, 1516, 839))</div>
+<div class="trace">57667: CWindow::updateWindowBounds(rect = (97, 73, 1516, 839))</div>
+<div class="trace">57679: CWindow::updateWindowBounds(rect = (109, 79, 1516, 839))</div>
+<div class="trace">57688: CWindow::updateWindowBounds(rect = (131, 84, 1516, 839))</div>
+<div class="trace">57695: CWindow::updateWindowBounds(rect = (130, 84, 1516, 839))</div>
+<div class="trace">57698: CWindow::updateWindowBounds(rect = (150, 90, 1516, 839))</div>
+<div class="trace">57708: CWindow::updateWindowBounds(rect = (172, 94, 1516, 839))</div>
+<div class="trace">57717: CWindow::updateWindowBounds(rect = (188, 99, 1516, 839))</div>
+<div class="trace">57729: CWindow::updateWindowBounds(rect = (202, 101, 1516, 839))</div>
+<div class="trace">57731: CWindow::updateWindowBounds(rect = (202, 100, 1516, 839))</div>
+<div class="trace">57737: CWindow::updateWindowBounds(rect = (211, 102, 1516, 839))</div>
+<div class="trace">57746: CWindow::updateWindowBounds(rect = (210, 102, 1516, 839))</div>
+<div class="trace">57749: CWindow::updateWindowBounds(rect = (220, 104, 1516, 839))</div>
+<div class="trace">57758: CWindow::updateWindowBounds(rect = (221, 104, 1516, 839))</div>
+<div class="trace">57767: CWindow::updateWindowBounds(rect = (225, 104, 1516, 839))</div>
+<div class="trace">57780: CWindow::updateWindowBounds(rect = (226, 105, 1516, 839))</div>
+<div class="trace">57784: CWindow::updateWindowBounds(rect = (226, 106, 1516, 839))</div>
+<div class="trace">57795: CWindow::updateWindowBounds(rect = (225, 106, 1516, 839))</div>
+<div class="trace">57807: CWindow::updateWindowBounds(rect = (227, 106, 1516, 839))</div>
+<div class="trace">57811: CWindow::updateWindowBounds(rect = (228, 106, 1516, 839))</div>
+<div class="trace">57828: CWindow::updateWindowBounds(rect = (229, 107, 1516, 839))</div>
+<div class="trace">57848: CWindow::updateWindowBounds(rect = (231, 107, 1516, 839))</div>
+<div class="trace">57879: CWindow::updateWindowBounds(rect = (236, 107, 1516, 839))</div>
+<div class="trace">57887: CWindow::updateWindowBounds(rect = (237, 107, 1516, 839))</div>
+<div class="trace">57898: CWindow::updateWindowBounds(rect = (238, 107, 1516, 839))</div>
+<div class="trace">57912: CWindow::updateWindowBounds(rect = (237, 107, 1516, 839))</div>
+<div class="trace">58020: CWindow::updateWindowBounds(rect = (238, 105, 1516, 839))</div>
+<div class="trace">58033: CWindow::updateWindowBounds(rect = (237, 101, 1516, 839))</div>
+<div class="trace">58040: CWindow::updateWindowBounds(rect = (234, 99, 1516, 839))</div>
+<div class="trace">58046: CWindow::updateWindowBounds(rect = (234, 100, 1516, 839))</div>
+<div class="trace">58051: CWindow::updateWindowBounds(rect = (232, 96, 1516, 839))</div>
+<div class="trace">58063: CWindow::updateWindowBounds(rect = (231, 95, 1516, 839))</div>
+<div class="trace">58068: CWindow::updateWindowBounds(rect = (229, 94, 1516, 839))</div>
+<div class="trace">58080: CWindow::updateWindowBounds(rect = (229, 93, 1516, 839))</div>
+<div class="trace">58101: CWindow::updateWindowBounds(rect = (228, 92, 1516, 839))</div>
+<div class="trace">58108: CWindow::updateWindowBounds(rect = (225, 91, 1516, 839))</div>
+<div class="trace">58128: CWindow::updateWindowBounds(rect = (226, 91, 1516, 839))</div>
+<div class="trace">58262: WM_CHAR</div>
+<div class="trace">58294: WM_CHAR</div>
+<div class="trace">58328: WM_CHAR</div>
+<div class="trace">58361: WM_CHAR</div>
+<div class="trace">58394: WM_CHAR</div>
+<div class="trace">58429: WM_CHAR</div>
+<div class="trace">58458: WM_CHAR</div>
+<div class="trace">58971: WM_CHAR</div>
+<div class="trace">58980: WM_CHAR</div>
+<div class="trace">59074: WM_CHAR</div>
+<div class="trace">59862: WM_CHAR</div>
+<div class="trace">60650: WM_CHAR</div>
+<div class="trace">61160: WM_CHAR</div>
+<div class="trace">61191: WM_CHAR</div>
+<div class="trace">61222: WM_CHAR</div>
+<div class="trace">61253: WM_CHAR</div>
+<div class="trace">61288: WM_CHAR</div>
+<div class="trace">61320: WM_CHAR</div>
+<div class="trace">61351: WM_CHAR</div>
+<div class="trace">61383: WM_CHAR</div>
+<div class="trace">61416: WM_CHAR</div>
+<div class="trace">61448: WM_CHAR</div>
+<div class="trace">61479: WM_CHAR</div>
+<div class="trace">61510: WM_CHAR</div>
+<div class="trace">61545: WM_CHAR</div>
+<div class="trace">61581: WM_CHAR</div>
+<div class="trace">61617: WM_CHAR</div>
+<div class="trace">61648: WM_CHAR</div>
+<div class="trace">61679: WM_CHAR</div>
+<div class="trace">61710: WM_CHAR</div>
+<div class="trace">61742: WM_CHAR</div>
+<div class="trace">61774: WM_CHAR</div>
+<div class="trace">61805: WM_CHAR</div>
+<div class="trace">61838: WM_CHAR</div>
+<div class="trace">61868: WM_CHAR</div>
+<div class="trace">61890: WM_CHAR</div>
+<div class="trace">62731: CWindow::updateWindowBounds(rect = (222, 91, 1516, 839))</div>
+<div class="trace">62740: CWindow::updateWindowBounds(rect = (216, 90, 1516, 839))</div>
+<div class="trace">62745: CWindow::updateWindowBounds(rect = (217, 90, 1516, 839))</div>
+<div class="trace">62749: CWindow::updateWindowBounds(rect = (209, 90, 1516, 839))</div>
+<div class="trace">62759: CWindow::updateWindowBounds(rect = (202, 87, 1516, 839))</div>
+<div class="trace">62762: CWindow::updateWindowBounds(rect = (203, 88, 1516, 839))</div>
+<div class="trace">62769: CWindow::updateWindowBounds(rect = (195, 84, 1516, 839))</div>
+<div class="trace">62779: CWindow::updateWindowBounds(rect = (189, 81, 1516, 839))</div>
+<div class="trace">62789: CWindow::updateWindowBounds(rect = (182, 75, 1516, 839))</div>
+<div class="trace">62795: CWindow::updateWindowBounds(rect = (182, 76, 1516, 839))</div>
+<div class="trace">62799: CWindow::updateWindowBounds(rect = (176, 74, 1516, 839))</div>
+<div class="trace">62809: CWindow::updateWindowBounds(rect = (166, 66, 1516, 839))</div>
+<div class="trace">62818: CWindow::updateWindowBounds(rect = (159, 61, 1516, 839))</div>
+<div class="trace">62831: CWindow::updateWindowBounds(rect = (150, 55, 1516, 839))</div>
+<div class="trace">62833: CWindow::updateWindowBounds(rect = (150, 56, 1516, 839))</div>
+<div class="trace">62838: CWindow::updateWindowBounds(rect = (147, 51, 1516, 839))</div>
+<div class="trace">62845: CWindow::updateWindowBounds(rect = (148, 51, 1516, 839))</div>
+<div class="trace">62849: CWindow::updateWindowBounds(rect = (140, 48, 1516, 839))</div>
+<div class="trace">62859: CWindow::updateWindowBounds(rect = (137, 43, 1516, 839))</div>
+<div class="trace">62862: CWindow::updateWindowBounds(rect = (138, 44, 1516, 839))</div>
+<div class="trace">62869: CWindow::updateWindowBounds(rect = (136, 42, 1516, 839))</div>
+<div class="trace">62879: CWindow::updateWindowBounds(rect = (135, 41, 1516, 839))</div>
+<div class="trace">62881: CWindow::updateWindowBounds(rect = (136, 42, 1516, 839))</div>
+<div class="trace">62899: CWindow::updateWindowBounds(rect = (134, 40, 1516, 839))</div>
+<div class="trace">62909: CWindow::updateWindowBounds(rect = (133, 39, 1516, 839))</div>
+<div class="trace">62919: CWindow::updateWindowBounds(rect = (132, 39, 1516, 839))</div>
+<div class="trace">62931: CWindow::updateWindowBounds(rect = (131, 37, 1516, 839))</div>
+<div class="trace">62933: CWindow::updateWindowBounds(rect = (131, 38, 1516, 839))</div>
+<div class="trace">62940: CWindow::updateWindowBounds(rect = (129, 36, 1516, 839))</div>
+<div class="trace">62945: CWindow::updateWindowBounds(rect = (130, 37, 1516, 839))</div>
+<div class="trace">62950: CWindow::updateWindowBounds(rect = (128, 36, 1516, 839))</div>
+<div class="trace">62959: CWindow::updateWindowBounds(rect = (128, 35, 1516, 839))</div>
+<div class="trace">62962: CWindow::updateWindowBounds(rect = (128, 36, 1516, 839))</div>
+<div class="trace">63393: WM_CHAR</div>
+<div class="trace">63820: WM_CHAR</div>
+<div class="trace">63847: WM_CHAR</div>
+<div class="trace">64359: WM_CHAR</div>
+<div class="trace">64388: WM_CHAR</div>
+<div class="trace">64422: WM_CHAR</div>
+<div class="trace">64457: WM_CHAR</div>
+<div class="trace">64487: WM_CHAR</div>
+<div class="trace">64520: WM_CHAR</div>
+<div class="trace">64550: WM_CHAR</div>
+<div class="trace">64581: WM_CHAR</div>
+<div class="trace">64613: WM_CHAR</div>
+<div class="trace">64646: WM_CHAR</div>
+<div class="trace">64681: WM_CHAR</div>
+<div class="trace">64717: WM_CHAR</div>
+<div class="trace">64751: WM_CHAR</div>
+<div class="trace">64782: WM_CHAR</div>
+<div class="trace">64813: WM_CHAR</div>
+<div class="trace">64846: WM_CHAR</div>
+<div class="trace">64878: WM_CHAR</div>
+<div class="trace">64909: WM_CHAR</div>
+<div class="trace">64941: WM_CHAR</div>
+<div class="trace">64974: WM_CHAR</div>
+<div class="trace">65004: WM_CHAR</div>
+<div class="trace">65036: WM_CHAR</div>
+<div class="trace">65067: WM_CHAR</div>
+<div class="trace">65099: WM_CHAR</div>
+<div class="trace">65158: WM_CHAR</div>
+<div class="trace">65610: WM_CHAR</div>
+<div class="trace">66137: WM_CHAR</div>
+<div class="trace">66168: WM_CHAR</div>
+<div class="trace">66200: WM_CHAR</div>
+<div class="trace">66232: WM_CHAR</div>
+<div class="trace">66263: WM_CHAR</div>
+<div class="trace">66296: WM_CHAR</div>
+<div class="trace">66328: WM_CHAR</div>
+<div class="trace">66358: WM_CHAR</div>
+<div class="trace">66390: WM_CHAR</div>
+<div class="trace">66422: WM_CHAR</div>
+<div class="trace">66453: WM_CHAR</div>
+<div class="trace">66484: WM_CHAR</div>
+<div class="trace">66517: WM_CHAR</div>
+<div class="trace">66551: WM_CHAR</div>
+<div class="trace">66581: WM_CHAR</div>
+<div class="trace">66613: WM_CHAR</div>
+<div class="trace">66645: WM_CHAR</div>
+<div class="trace">66678: WM_CHAR</div>
+<div class="trace">66708: WM_CHAR</div>
+<div class="trace">66739: WM_CHAR</div>
+<div class="trace">66777: WM_CHAR</div>
+<div class="trace">66811: WM_CHAR</div>
+<div class="trace">66847: WM_CHAR</div>
+<div class="trace">66879: WM_CHAR</div>
+<div class="trace">66911: WM_CHAR</div>
+<div class="trace">66940: WM_CHAR</div>
+<div class="trace">66973: WM_CHAR</div>
+<div class="trace">67005: WM_CHAR</div>
+<div class="trace">67036: WM_CHAR</div>
+<div class="trace">67067: WM_CHAR</div>
+<div class="trace">67099: WM_CHAR</div>
+<div class="trace">67130: WM_CHAR</div>
+<div class="trace">67162: WM_CHAR</div>
+<div class="trace">67194: WM_CHAR</div>
+<div class="trace">67227: WM_CHAR</div>
+<div class="trace">67257: WM_CHAR</div>
+<div class="trace">67289: WM_CHAR</div>
+<div class="trace">67322: WM_CHAR</div>
+<div class="trace">67354: WM_CHAR</div>
+<div class="trace">67385: WM_CHAR</div>
+<div class="trace">67415: WM_CHAR</div>
+<div class="trace">67447: WM_CHAR</div>
+<div class="trace">67480: WM_CHAR</div>
+<div class="debug">67488: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">67489: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">67489: 💠 Created Texture[76] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">67490: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">67491: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">67492: 💠 Created Texture[77] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">67494: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">67495: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">67496: 💠 Created Texture[78] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="trace">67511: WM_CHAR</div>
+<div class="trace">67541: WM_CHAR</div>
+<div class="trace">67574: WM_CHAR</div>
+<div class="trace">67609: WM_CHAR</div>
+<div class="trace">67641: WM_CHAR</div>
+<div class="trace">67673: WM_CHAR</div>
+<div class="trace">67704: WM_CHAR</div>
+<div class="trace">67735: WM_CHAR</div>
+<div class="trace">67766: WM_CHAR</div>
+<div class="trace">67798: WM_CHAR</div>
+<div class="trace">67832: WM_CHAR</div>
+<div class="trace">67866: WM_CHAR</div>
+<div class="trace">67902: WM_CHAR</div>
+<div class="trace">67935: WM_CHAR</div>
+<div class="trace">67968: WM_CHAR</div>
+<div class="trace">68000: WM_CHAR</div>
+<div class="trace">68030: WM_CHAR</div>
+<div class="trace">68063: WM_CHAR</div>
+<div class="trace">68095: WM_CHAR</div>
+<div class="trace">68127: WM_CHAR</div>
+<div class="trace">68159: WM_CHAR</div>
+<div class="trace">68191: WM_CHAR</div>
+<div class="trace">68221: WM_CHAR</div>
+<div class="trace">68253: WM_CHAR</div>
+<div class="trace">68285: WM_CHAR</div>
+<div class="trace">68317: WM_CHAR</div>
+<div class="trace">68349: WM_CHAR</div>
+<div class="trace">68380: WM_CHAR</div>
+<div class="trace">68412: WM_CHAR</div>
+<div class="trace">68444: WM_CHAR</div>
+<div class="trace">68474: WM_CHAR</div>
+<div class="trace">68506: WM_CHAR</div>
+<div class="trace">68538: WM_CHAR</div>
+<div class="trace">68569: WM_CHAR</div>
+<div class="trace">68601: WM_CHAR</div>
+<div class="debug">68619: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">68620: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">68620: 💠 Created Texture[79] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">68621: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">68622: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">68622: 💠 Created Texture[80] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">68623: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">68624: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">68624: 💠 Created Texture[81] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="trace">68633: WM_CHAR</div>
+<div class="trace">68667: WM_CHAR</div>
+<div class="trace">68700: WM_CHAR</div>
+<div class="trace">68732: WM_CHAR</div>
+<div class="trace">68763: WM_CHAR</div>
+<div class="trace">68796: WM_CHAR</div>
+<div class="trace">68828: WM_CHAR</div>
+<div class="trace">68859: WM_CHAR</div>
+<div class="trace">68891: WM_CHAR</div>
+<div class="trace">68927: WM_CHAR</div>
+<div class="trace">68963: WM_CHAR</div>
+<div class="trace">68998: WM_CHAR</div>
+<div class="trace">69029: WM_CHAR</div>
+<div class="trace">69062: WM_CHAR</div>
+<div class="trace">69094: WM_CHAR</div>
+<div class="trace">69369: WM_CHAR</div>
+<div class="trace">69884: WM_CHAR</div>
+<div class="trace">69914: WM_CHAR</div>
+<div class="trace">69946: WM_CHAR</div>
+<div class="trace">69980: WM_CHAR</div>
+<div class="trace">70017: WM_CHAR</div>
+<div class="trace">70052: WM_CHAR</div>
+<div class="trace">70084: WM_CHAR</div>
+<div class="trace">70114: WM_CHAR</div>
+<div class="trace">70147: WM_CHAR</div>
+<div class="trace">70179: WM_CHAR</div>
+<div class="trace">70210: WM_CHAR</div>
+<div class="trace">70240: WM_CHAR</div>
+<div class="trace">70273: WM_CHAR</div>
+<div class="trace">70304: WM_CHAR</div>
+<div class="trace">70336: WM_CHAR</div>
+<div class="trace">70368: WM_CHAR</div>
+<div class="trace">70398: WM_CHAR</div>
+<div class="trace">70430: WM_CHAR</div>
+<div class="trace">70462: WM_CHAR</div>
+<div class="trace">70494: WM_CHAR</div>
+<div class="trace">70524: WM_CHAR</div>
+<div class="trace">70555: WM_CHAR</div>
+<div class="trace">70587: WM_CHAR</div>
+<div class="trace">70619: WM_CHAR</div>
+<div class="trace">70649: WM_CHAR</div>
+<div class="trace">70681: WM_CHAR</div>
+<div class="trace">70713: WM_CHAR</div>
+<div class="trace">70736: WM_CHAR</div>
+<div class="trace">70779: WM_CHAR</div>
+<div class="trace">70813: WM_CHAR</div>
+<div class="trace">70842: WM_CHAR</div>
+<div class="trace">70873: WM_CHAR</div>
+<div class="trace">70905: WM_CHAR</div>
+<div class="trace">71128: WM_CHAR</div>
+<div class="trace">71638: WM_CHAR</div>
+<div class="trace">71669: WM_CHAR</div>
+<div class="trace">71702: WM_CHAR</div>
+<div class="trace">71732: WM_CHAR</div>
+<div class="trace">71764: WM_CHAR</div>
+<div class="trace">71796: WM_CHAR</div>
+<div class="trace">71797: WM_CHAR</div>
+<div class="debug">72121: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">72122: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">72123: 💠 Created Texture[82] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">72124: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">72125: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">72125: 💠 Created Texture[83] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">72127: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">72129: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">72130: 💠 Created Texture[84] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="trace">72327: WM_CHAR</div>
+<div class="trace">72359: WM_CHAR</div>
+<div class="trace">72390: WM_CHAR</div>
+<div class="trace">72421: WM_CHAR</div>
+<div class="trace">72453: WM_CHAR</div>
+<div class="trace">72485: WM_CHAR</div>
+<div class="trace">72516: WM_CHAR</div>
+<div class="trace">72549: WM_CHAR</div>
+<div class="trace">72580: WM_CHAR</div>
+<div class="trace">72612: WM_CHAR</div>
+<div class="trace">72644: WM_CHAR</div>
+<div class="trace">72676: WM_CHAR</div>
+<div class="trace">72706: WM_CHAR</div>
+<div class="trace">72739: WM_CHAR</div>
+<div class="trace">72770: WM_CHAR</div>
+<div class="debug">72771: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">72771: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">72772: 💠 Created Texture[85] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">72773: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">72774: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">72774: 💠 Created Texture[86] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">72776: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">72777: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">72779: 💠 Created Texture[87] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="trace">72801: WM_CHAR</div>
+<div class="trace">72835: WM_CHAR</div>
+<div class="trace">72867: WM_CHAR</div>
+<div class="trace">72899: WM_CHAR</div>
+<div class="trace">72932: WM_CHAR</div>
+<div class="trace">72964: WM_CHAR</div>
+<div class="trace">72996: WM_CHAR</div>
+<div class="trace">73028: WM_CHAR</div>
+<div class="trace">73061: WM_CHAR</div>
+<div class="trace">73091: WM_CHAR</div>
+<div class="trace">73125: WM_CHAR</div>
+<div class="debug">74207: 💠 Created Texture[88] (type: Dynamic, size: 2048x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">74207: ℹ️ Created font texture (size: 2048x256)</div>
+<div class="trace">74273: WM_CHAR</div>
+<div class="trace">74682: WM_CHAR</div>
+<div class="trace">75919: WM_CHAR</div>
+<div class="trace">76449: WM_CHAR</div>
+<div class="trace">76483: WM_CHAR</div>
+<div class="trace">76513: WM_CHAR</div>
+<div class="trace">76544: WM_CHAR</div>
+<div class="trace">76578: WM_CHAR</div>
+<div class="trace">76608: WM_CHAR</div>
+<div class="trace">76639: WM_CHAR</div>
+<div class="trace">76671: WM_CHAR</div>
+<div class="trace">76701: WM_CHAR</div>
+<div class="trace">76733: WM_CHAR</div>
+<div class="trace">76764: WM_CHAR</div>
+<div class="trace">76799: WM_CHAR</div>
+<div class="trace">76829: WM_CHAR</div>
+<div class="trace">76860: WM_CHAR</div>
+<div class="trace">76891: WM_CHAR</div>
+<div class="trace">76922: WM_CHAR</div>
+<div class="trace">76953: WM_CHAR</div>
+<div class="trace">76986: WM_CHAR</div>
+<div class="debug">77004: ♻️ Released Texture[2]</div>
+<div class="debug">77004: ♻️ Released Texture[3]</div>
+<div class="debug">77004: ♻️ Released Texture[4]</div>
+<div class="debug">77005: ♻️ Released Texture[5]</div>
+<div class="debug">77005: ♻️ Released Texture[6]</div>
+<div class="debug">77005: ♻️ Released Texture[7]</div>
+<div class="debug">77005: ♻️ Released Texture[8]</div>
+<div class="debug">77006: ♻️ Released Texture[9]</div>
+<div class="debug">77006: ♻️ Released Texture[10]</div>
+<div class="debug">77006: ♻️ Released Texture[11]</div>
+<div class="debug">77006: ♻️ Released Texture[12]</div>
+<div class="debug">77007: ♻️ Released Texture[13]</div>
+<div class="debug">77007: ♻️ Released Texture[14]</div>
+<div class="debug">77007: ♻️ Released Texture[15]</div>
+<div class="debug">77007: ♻️ Released Texture[16]</div>
+<div class="debug">77008: ♻️ Released Texture[17]</div>
+<div class="debug">77008: ♻️ Released Texture[18]</div>
+<div class="debug">77008: ♻️ Released Texture[19]</div>
+<div class="debug">77008: ♻️ Released Texture[20]</div>
+<div class="debug">77009: ♻️ Released Texture[21]</div>
+<div class="debug">77009: ♻️ Released Texture[22]</div>
+<div class="debug">77009: ♻️ Released Texture[23]</div>
+<div class="debug">77010: ♻️ Released Texture[24]</div>
+<div class="debug">77010: ♻️ Released Texture[25]</div>
+<div class="debug">77011: ♻️ Released Texture[26]</div>
+<div class="debug">77012: ♻️ Released Texture[27]</div>
+<div class="debug">77012: ♻️ Released Texture[78]</div>
+<div class="debug">77013: ♻️ Released Texture[85]</div>
+<div class="debug">77014: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77015: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77016: 💠 Created Texture[89] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77017: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77018: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77018: 💠 Created Texture[90] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="trace">77019: WM_CHAR</div>
+<div class="debug">77019: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77020: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77021: 💠 Created Texture[91] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77022: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77022: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77023: 💠 Created Texture[92] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77024: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77025: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77025: 💠 Created Texture[93] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77027: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77028: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77029: 💠 Created Texture[94] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77031: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77032: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77032: 💠 Created Texture[95] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77033: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77034: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77035: 💠 Created Texture[96] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77036: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77037: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77037: 💠 Created Texture[97] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77038: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77039: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77039: 💠 Created Texture[98] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77040: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77041: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77042: 💠 Created Texture[99] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77043: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77044: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77044: 💠 Created Texture[100] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77046: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77047: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77048: 💠 Created Texture[101] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="trace">77049: WM_CHAR</div>
+<div class="debug">77049: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77050: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77051: 💠 Created Texture[102] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77052: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77052: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77053: 💠 Created Texture[103] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77054: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77055: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77055: 💠 Created Texture[104] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77056: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77057: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77058: 💠 Created Texture[105] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77059: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77060: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77060: 💠 Created Texture[106] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77062: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77062: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77063: 💠 Created Texture[107] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77064: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77065: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77065: 💠 Created Texture[108] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77066: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77067: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77068: 💠 Created Texture[109] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77069: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77069: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77070: 💠 Created Texture[110] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77071: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77072: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77072: 💠 Created Texture[111] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77073: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77074: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77074: 💠 Created Texture[112] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77076: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77077: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77078: 💠 Created Texture[113] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77079: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77080: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77080: 💠 Created Texture[114] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77082: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77083: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="trace">77083: WM_CHAR</div>
+<div class="debug">77084: 💠 Created Texture[115] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77085: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77086: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77086: 💠 Created Texture[116] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77087: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77088: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77089: 💠 Created Texture[117] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77089: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77090: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77091: 💠 Created Texture[118] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77092: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77093: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77093: 💠 Created Texture[119] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77095: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77095: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77096: 💠 Created Texture[120] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77097: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77098: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77098: 💠 Created Texture[121] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77099: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77100: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77101: 💠 Created Texture[122] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77102: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77102: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77103: 💠 Created Texture[123] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77104: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77105: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77105: 💠 Created Texture[124] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77106: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77107: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77108: 💠 Created Texture[125] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77109: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77110: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77110: 💠 Created Texture[126] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77111: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77112: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77113: 💠 Created Texture[127] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77114: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77115: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="trace">77115: WM_CHAR</div>
+<div class="debug">77115: 💠 Created Texture[128] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77117: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77118: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77118: 💠 Created Texture[129] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77119: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77120: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77120: 💠 Created Texture[130] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77121: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77122: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77123: 💠 Created Texture[131] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77124: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77125: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77125: 💠 Created Texture[132] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77127: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77128: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77129: 💠 Created Texture[133] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77130: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77131: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77131: 💠 Created Texture[134] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77132: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77133: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77134: 💠 Created Texture[135] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77135: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77135: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77136: 💠 Created Texture[136] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77137: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77138: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77138: 💠 Created Texture[137] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77139: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77140: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77141: 💠 Created Texture[138] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77142: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77143: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77143: 💠 Created Texture[139] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77145: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77146: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77147: 💠 Created Texture[140] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="trace">77147: WM_CHAR</div>
+<div class="debug">77148: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77149: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77149: 💠 Created Texture[141] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77150: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77151: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77152: 💠 Created Texture[142] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77153: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77154: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77156: 💠 Created Texture[143] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77157: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77158: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77158: 💠 Created Texture[144] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77160: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77161: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77162: 💠 Created Texture[145] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77163: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77163: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77164: 💠 Created Texture[146] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77165: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77166: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77166: 💠 Created Texture[147] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77167: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77168: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77169: 💠 Created Texture[148] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77170: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77170: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77171: 💠 Created Texture[149] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77172: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77173: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77173: 💠 Created Texture[150] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77174: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77175: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77176: 💠 Created Texture[151] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77177: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77178: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="trace">77178: WM_CHAR</div>
+<div class="debug">77179: 💠 Created Texture[152] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77180: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77180: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77181: 💠 Created Texture[153] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77182: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77183: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77183: 💠 Created Texture[154] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77184: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77185: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77186: 💠 Created Texture[155] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77187: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77188: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77188: 💠 Created Texture[156] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77189: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77190: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77190: 💠 Created Texture[157] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77191: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77192: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77193: 💠 Created Texture[158] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77194: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77195: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77196: 💠 Created Texture[159] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77196: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77197: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77198: 💠 Created Texture[160] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77199: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77200: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77200: 💠 Created Texture[161] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77201: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77202: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77202: 💠 Created Texture[162] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77203: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77204: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77205: 💠 Created Texture[163] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77206: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77206: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77207: 💠 Created Texture[164] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77208: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="trace">77209: WM_CHAR</div>
+<div class="debug">77209: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77210: 💠 Created Texture[165] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77211: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77212: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77213: 💠 Created Texture[166] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77214: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77214: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77215: 💠 Created Texture[167] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77216: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77216: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77217: 💠 Created Texture[168] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77218: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77219: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77219: 💠 Created Texture[169] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77220: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77221: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77222: 💠 Created Texture[170] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77223: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77223: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77224: 💠 Created Texture[171] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77225: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77226: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77227: 💠 Created Texture[172] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77228: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77229: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77230: 💠 Created Texture[173] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77231: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77231: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77232: 💠 Created Texture[174] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77233: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77234: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77234: 💠 Created Texture[175] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77235: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77236: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77237: 💠 Created Texture[176] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77238: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77238: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77239: 💠 Created Texture[177] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77240: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="trace">77240: WM_CHAR</div>
+<div class="debug">77241: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77241: 💠 Created Texture[178] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77242: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77244: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77244: 💠 Created Texture[179] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77246: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77246: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77247: 💠 Created Texture[180] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77248: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77249: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77249: 💠 Created Texture[181] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77250: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77251: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77251: 💠 Created Texture[182] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77252: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77253: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77253: 💠 Created Texture[183] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77254: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77255: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77255: 💠 Created Texture[184] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77256: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77257: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77257: 💠 Created Texture[185] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77258: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77259: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77259: 💠 Created Texture[186] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77260: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77261: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77261: 💠 Created Texture[187] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77262: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77262: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77262: 💠 Created Texture[188] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77263: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77264: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77264: 💠 Created Texture[189] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77264: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77265: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77265: 💠 Created Texture[190] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77266: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77266: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77267: 💠 Created Texture[191] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77267: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77268: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77268: 💠 Created Texture[192] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77269: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77269: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77270: 💠 Created Texture[193] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77270: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77271: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77271: 💠 Created Texture[194] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="trace">77271: WM_CHAR</div>
+<div class="debug">77271: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77272: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77272: 💠 Created Texture[195] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77273: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77273: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77273: 💠 Created Texture[196] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77274: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77274: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77275: 💠 Created Texture[197] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77275: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77276: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77276: 💠 Created Texture[198] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77277: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77277: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77278: 💠 Created Texture[199] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77278: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77278: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77279: 💠 Created Texture[200] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77279: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77279: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77280: 💠 Created Texture[201] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77280: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77281: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77281: 💠 Created Texture[202] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77281: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77282: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77282: 💠 Created Texture[203] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77282: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77283: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77283: 💠 Created Texture[204] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77283: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77284: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77284: 💠 Created Texture[205] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77284: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77285: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77285: 💠 Created Texture[206] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77286: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77286: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77286: 💠 Created Texture[207] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77287: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77287: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77287: 💠 Created Texture[208] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77288: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77288: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77288: 💠 Created Texture[209] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77289: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77289: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77289: 💠 Created Texture[210] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77290: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77290: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77290: 💠 Created Texture[211] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77291: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77291: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77291: 💠 Created Texture[212] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77292: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77292: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77292: 💠 Created Texture[213] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77293: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77293: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77294: 💠 Created Texture[214] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77294: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77295: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77295: 💠 Created Texture[215] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77295: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77296: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77296: 💠 Created Texture[216] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77296: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77297: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77297: 💠 Created Texture[217] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77297: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77298: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77298: 💠 Created Texture[218] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77299: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77299: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77299: 💠 Created Texture[219] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77300: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77300: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77300: 💠 Created Texture[220] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77301: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77301: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77301: 💠 Created Texture[221] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77302: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77302: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77302: 💠 Created Texture[222] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77303: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77303: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77303: 💠 Created Texture[223] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="trace">77304: WM_CHAR</div>
+<div class="debug">77304: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77304: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77305: 💠 Created Texture[224] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77305: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77305: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77306: 💠 Created Texture[225] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77306: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77307: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77307: 💠 Created Texture[226] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77307: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77308: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77308: 💠 Created Texture[227] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77308: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77309: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77309: 💠 Created Texture[228] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77310: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77310: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77310: 💠 Created Texture[229] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77311: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot; size: 353B</div>
+<div class="debug">77311: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy2.png&quot;</div>
+<div class="debug">77312: 💠 Created Texture[230] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77312: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77313: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77313: 💠 Created Texture[231] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77313: 📤 BinaryReader: Opened file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot; size: 360B</div>
+<div class="debug">77314: 📥 BinaryReader: Closed file &quot;C:/Users/Thistle/Projects/Rabbit2/Rabbit2/App/Datas/enemy.png&quot;</div>
+<div class="debug">77314: 💠 Created Texture[232] (type: Normal, size:30x30, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77315: ♻️ Released Texture[84]</div>
+<div class="debug">77315: ♻️ Released Texture[86]</div>
+<div class="debug">77315: ♻️ Released Texture[80]</div>
+<div class="debug">77315: ♻️ Released Texture[82]</div>
+<div class="debug">77315: ♻️ Released Texture[77]</div>
+<div class="debug">77315: ♻️ Released Texture[79]</div>
+<div class="debug">77316: ♻️ Released Texture[87]</div>
+<div class="debug">77316: ♻️ Released Texture[81]</div>
+<div class="debug">77316: ♻️ Released Texture[83]</div>
+<div class="debug">77316: ♻️ Released Texture[76]</div>
+<div class="trace">77340: WM_CHAR</div>
+<div class="debug">77350: 💠 Created Texture[233] (type: Dynamic, size: 1024x256, format: R8G8B8A8_Unorm)</div>
+<div class="debug">77350: ℹ️ Created font texture (size: 1024x256)</div>
+<div class="trace">77376: WM_CHAR</div>
+<div class="trace">77410: WM_CHAR</div>
+<div class="trace">77441: WM_CHAR</div>
+<div class="trace">77472: WM_CHAR</div>
+<div class="trace">77505: WM_CHAR</div>
+<div class="trace">77537: WM_CHAR</div>
+<div class="trace">77568: WM_CHAR</div>
+<div class="trace">77600: WM_CHAR</div>
+<div class="trace">77633: WM_CHAR</div>
+<div class="trace">77663: WM_CHAR</div>
+<div class="trace">79244: CWindow::updateWindowBounds(rect = (109, 34, 1516, 839))</div>
+<div class="trace">79247: CWindow::updateWindowBounds(rect = (102, 34, 1516, 839))</div>
+<div class="trace">79280: CWindow::updateWindowBounds(rect = (80, 33, 1516, 839))</div>
+<div class="trace">79291: CWindow::updateWindowBounds(rect = (58, 31, 1516, 839))</div>
+<div class="trace">79309: CWindow::updateWindowBounds(rect = (42, 29, 1516, 839))</div>
+<div class="trace">79314: CWindow::updateWindowBounds(rect = (4, 21, 1516, 839))</div>
+<div class="trace">79327: CWindow::updateWindowBounds(rect = (-18, 14, 1516, 839))</div>
+<div class="trace">79331: CWindow::updateWindowBounds(rect = (-62, -4, 1516, 839))</div>
+<div class="trace">79332: CWindow::updateWindowBounds(rect = (-84, -10, 1516, 839))</div>
+<div class="trace">79359: CWindow::updateWindowBounds(rect = (-101, -14, 1516, 839))</div>
+<div class="trace">79362: CWindow::updateWindowBounds(rect = (-120, -14, 1516, 839))</div>
+<div class="trace">79368: CWindow::updateWindowBounds(rect = (-129, -14, 1516, 839))</div>
+<div class="trace">79378: CWindow::updateWindowBounds(rect = (-136, -14, 1516, 839))</div>
+<div class="trace">79380: CWindow::updateWindowBounds(rect = (-135, -14, 1516, 839))</div>
+<div class="trace">79427: CWindow::updateWindowBounds(rect = (-137, -14, 1516, 839))</div>
+<div class="trace">79430: CWindow::updateWindowBounds(rect = (-136, -14, 1516, 839))</div>
+<div class="trace">79458: CWindow::updateWindowBounds(rect = (-139, -14, 1516, 839))</div>
+<div class="trace">79462: CWindow::updateWindowBounds(rect = (-138, -14, 1516, 839))</div>
+<div class="trace">79527: CWindow::updateWindowBounds(rect = (-140, -14, 1516, 839))</div>
+<div class="trace">79558: CWindow::updateWindowBounds(rect = (-141, -14, 1516, 839))</div>
+<div class="trace">79639: CWindow::updateWindowBounds(rect = (-141, -10, 1516, 839))</div>
+<div class="trace">79690: CWindow::updateWindowBounds(rect = (-137, -7, 1516, 839))</div>
+<div class="trace">79694: CWindow::updateWindowBounds(rect = (-136, -3, 1516, 839))</div>
+<div class="trace">79698: CWindow::updateWindowBounds(rect = (-131, -1, 1516, 839))</div>
+<div class="trace">79701: CWindow::updateWindowBounds(rect = (-128, 3, 1516, 839))</div>
+<div class="trace">79703: CWindow::updateWindowBounds(rect = (-127, 3, 1516, 839))</div>
+<div class="trace">79711: CWindow::updateWindowBounds(rect = (-126, 3, 1516, 839))</div>
+<div class="trace">79712: CWindow::updateWindowBounds(rect = (-126, 2, 1516, 839))</div>
+<div class="trace">79748: CWindow::updateWindowBounds(rect = (-125, 4, 1516, 839))</div>
+<div class="trace">79751: CWindow::updateWindowBounds(rect = (-124, 4, 1516, 839))</div>
+<div class="trace">79754: CWindow::updateWindowBounds(rect = (-123, 4, 1516, 839))</div>
+<div class="trace">79762: CWindow::updateWindowBounds(rect = (-123, 3, 1516, 839))</div>
+<div class="trace">79807: CWindow::updateWindowBounds(rect = (-123, 5, 1516, 839))</div>
+<div class="trace">79858: CWindow::updateWindowBounds(rect = (-123, 7, 1516, 839))</div>
+<div class="trace">79878: CWindow::updateWindowBounds(rect = (-121, 10, 1516, 839))</div>
+<div class="trace">79880: CWindow::updateWindowBounds(rect = (-122, 10, 1516, 839))</div>
+<div class="trace">79920: CWindow::updateWindowBounds(rect = (-120, 13, 1516, 839))</div>
+<div class="trace">79959: CWindow::updateWindowBounds(rect = (-120, 14, 1516, 839))</div>
+<div class="trace">80018: CWindow::updateWindowBounds(rect = (-120, 15, 1516, 839))</div>
+<div class="trace">80028: CWindow::updateWindowBounds(rect = (-120, 14, 1516, 839))</div>
+<div class="trace">81656: WM_CLOSE</div>
+<div class="info">81659: 🚪 System::Update(): `UserAction::CloseButtonClicked` has occurred</div>
+<div class="debug">81660: ♻️ Released Font[21]</div>
+<div class="debug">81661: ♻️ Released Font[20]</div>
+<div class="debug">81661: ♻️ Released Font[19]</div>
+<div class="debug">81662: ♻️ Released Texture[233]</div>
+<div class="debug">81663: ♻️ Released Texture[60]</div>
+<div class="debug">81663: ♻️ Released Texture[59]</div>
+<div class="debug">81663: ♻️ Released Texture[58]</div>
+<div class="debug">81664: ♻️ Released Texture[57]</div>
+<div class="debug">81664: ♻️ Released Texture[56]</div>
+<div class="debug">81664: ♻️ Released Font[18]</div>
+<div class="debug">81664: ♻️ Released Texture[74]</div>
+<div class="debug">81665: ♻️ Released Font[17]</div>
+<div class="debug">81665: ♻️ Released Texture[88]</div>
+<div class="debug">81666: ♻️ Released Font[16]</div>
+<div class="debug">81666: ♻️ Released Texture[75]</div>
+<div class="debug">81667: ♻️ Released Font[15]</div>
+<div class="debug">81668: ♻️ Released Texture[71]</div>
+<div class="debug">81668: ♻️ Released Texture[55]</div>
+<div class="debug">81669: ♻️ Released Texture[54]</div>
+<div class="debug">81669: ♻️ Released Font[14]</div>
+<div class="debug">81669: ♻️ Released Texture[72]</div>
+<div class="debug">81670: ♻️ Released Font[13]</div>
+<div class="debug">81670: ♻️ Released Texture[70]</div>
+<div class="debug">81671: ♻️ Released Font[12]</div>
+<div class="debug">81671: ♻️ Released Texture[69]</div>
+<div class="debug">81672: ♻️ Released Font[11]</div>
+<div class="debug">81672: ♻️ Released Texture[68]</div>
+<div class="debug">81673: ♻️ Released Font[10]</div>
+<div class="debug">81673: ♻️ Released Texture[67]</div>
+<div class="debug">81674: ♻️ Released Font[9]</div>
+<div class="debug">81674: ♻️ Released Texture[66]</div>
+<div class="debug">81675: ♻️ Released Font[8]</div>
+<div class="debug">81676: ♻️ Released Texture[65]</div>
+<div class="debug">81677: ♻️ Released Font[7]</div>
+<div class="debug">81677: ♻️ Released Texture[64]</div>
+<div class="debug">81679: ♻️ Released Font[6]</div>
+<div class="debug">81680: ♻️ Released Texture[63]</div>
+<div class="debug">81681: ♻️ Released Font[5]</div>
+<div class="debug">81681: ♻️ Released Texture[62]</div>
+<div class="debug">81682: ♻️ Released Font[4]</div>
+<div class="debug">81682: ♻️ Released Texture[61]</div>
+<div class="debug">81683: ♻️ Released Font[3]</div>
+<div class="debug">81684: ♻️ Released Texture[73]</div>
+<div class="debug">81684: ♻️ Released Texture[53]</div>
+<div class="debug">81685: ♻️ Released Texture[52]</div>
+<div class="debug">81685: ♻️ Released Texture[51]</div>
+<div class="debug">81685: ♻️ Released Texture[50]</div>
+<div class="debug">81689: ♻️ Released Script[0(null)]</div>
+<hr width="99%"><div class="trace">81705: CAsset::~CAsset()</div>
+<div class="trace">81705: CScript::~CScript()</div>
+<div class="trace">81705: CPrint::~CPrint()</div>
+<div class="debug">81705: ♻️ Released Font[2]</div>
+<div class="trace">81706: CEffect::~CEffect()</div>
+<div class="debug">81706: ♻️ Released Effect[0(null)]</div>
+<div class="trace">81706: CGUI::~CGUI()</div>
+<div class="debug">81706: ♻️ Released Font[1]</div>
+<div class="trace">81707: CSDFFont::~CSDFFont()</div>
+<div class="debug">81707: ♻️ Released SDFFont[0(null)]</div>
+<div class="trace">81707: CFont::~CFont()</div>
+<div class="debug">81707: ♻️ Released Font[0(null)]</div>
+<div class="trace">81708: CScreenCapture::~CScreenCapture()</div>
+<div class="trace">81708: CRenderer2D_D3D11::~CRenderer2D_D3D11()</div>
+<div class="debug">81708: ♻️ Released Texture[1]</div>
+<div class="debug">81709: ♻️ Released PixelShader[9]</div>
+<div class="debug">81709: ♻️ Released PixelShader[8]</div>
+<div class="debug">81710: ♻️ Released PixelShader[7]</div>
+<div class="debug">81710: ♻️ Released PixelShader[6]</div>
+<div class="debug">81710: ♻️ Released PixelShader[5]</div>
+<div class="debug">81710: ♻️ Released PixelShader[4]</div>
+<div class="debug">81711: ♻️ Released PixelShader[3]</div>
+<div class="debug">81711: ♻️ Released VertexShader[3]</div>
+<div class="debug">81711: ♻️ Released VertexShader[2]</div>
+<div class="debug">81712: ♻️ Released VertexShader[1]</div>
+<div class="trace">81712: CTexture_D3D11::~CTexture_D3D11()</div>
+<div class="debug">81712: ♻️ Released Texture[37]</div>
+<div class="debug">81712: ♻️ Released Texture[199]</div>
+<div class="debug">81713: ♻️ Released Texture[118]</div>
+<div class="debug">81713: ♻️ Released Texture[225]</div>
+<div class="debug">81713: ♻️ Released Texture[131]</div>
+<div class="debug">81713: ♻️ Released Texture[173]</div>
+<div class="debug">81713: ♻️ Released Texture[220]</div>
+<div class="debug">81713: ♻️ Released Texture[105]</div>
+<div class="debug">81713: ♻️ Released Texture[152]</div>
+<div class="debug">81714: ♻️ Released Texture[186]</div>
+<div class="debug">81714: ♻️ Released Texture[164]</div>
+<div class="debug">81714: ♻️ Released Texture[215]</div>
+<div class="debug">81714: ♻️ Released Texture[96]</div>
+<div class="debug">81714: ♻️ Released Texture[147]</div>
+<div class="debug">81714: ♻️ Released Texture[189]</div>
+<div class="debug">81714: ♻️ Released Texture[44]</div>
+<div class="debug">81715: ♻️ Released Texture[95]</div>
+<div class="debug">81715: ♻️ Released Texture[206]</div>
+<div class="debug">81715: ♻️ Released Texture[121]</div>
+<div class="debug">81715: ♻️ Released Texture[232]</div>
+<div class="debug">81715: ♻️ Released Texture[138]</div>
+<div class="debug">81716: ♻️ Released Texture[180]</div>
+<div class="debug">81716: ♻️ Released Texture[39]</div>
+<div class="debug">81716: ♻️ Released Texture[193]</div>
+<div class="debug">81716: ♻️ Released Texture[112]</div>
+<div class="debug">81716: ♻️ Released Texture[227]</div>
+<div class="debug">81716: ♻️ Released Texture[141]</div>
+<div class="debug">81717: ♻️ Released Texture[175]</div>
+<div class="debug">81717: ♻️ Released Texture[222]</div>
+<div class="debug">81717: ♻️ Released Texture[107]</div>
+<div class="debug">81717: ♻️ Released Texture[154]</div>
+<div class="debug">81717: ♻️ Released Texture[132]</div>
+<div class="debug">81717: ♻️ Released Texture[166]</div>
+<div class="debug">81718: ♻️ Released Texture[209]</div>
+<div class="debug">81718: ♻️ Released Texture[98]</div>
+<div class="debug">81718: ♻️ Released Texture[157]</div>
+<div class="debug">81718: ♻️ Released Texture[191]</div>
+<div class="debug">81718: ♻️ Released Texture[46]</div>
+<div class="debug">81718: ♻️ Released Texture[89]</div>
+<div class="debug">81719: ♻️ Released Texture[200]</div>
+<div class="debug">81719: ♻️ Released Texture[123]</div>
+<div class="debug">81719: ♻️ Released Texture[101]</div>
+<div class="debug">81719: ♻️ Released Texture[148]</div>
+<div class="debug">81719: ♻️ Released Texture[182]</div>
+<div class="debug">81719: ♻️ Released Texture[33]</div>
+<div class="debug">81720: ♻️ Released Texture[195]</div>
+<div class="debug">81720: ♻️ Released Texture[114]</div>
+<div class="debug">81720: ♻️ Released Texture[28]</div>
+<div class="debug">81720: ♻️ Released Texture[143]</div>
+<div class="debug">81720: ♻️ Released Texture[169]</div>
+<div class="debug">81721: ♻️ Released Texture[216]</div>
+<div class="debug">81721: ♻️ Released Texture[117]</div>
+<div class="debug">81721: ♻️ Released Texture[228]</div>
+<div class="debug">81721: ♻️ Released Texture[134]</div>
+<div class="debug">81721: ♻️ Released Texture[49]</div>
+<div class="debug">81721: ♻️ Released Texture[160]</div>
+<div class="debug">81721: ♻️ Released Texture[211]</div>
+<div class="debug">81722: ♻️ Released Texture[108]</div>
+<div class="debug">81722: ♻️ Released Texture[159]</div>
+<div class="debug">81722: ♻️ Released Texture[185]</div>
+<div class="debug">81722: ♻️ Released Texture[40]</div>
+<div class="debug">81722: ♻️ Released Texture[91]</div>
+<div class="debug">81723: ♻️ Released Texture[202]</div>
+<div class="debug">81723: ♻️ Released Texture[103]</div>
+<div class="debug">81723: ♻️ Released Texture[150]</div>
+<div class="debug">81723: ♻️ Released Texture[176]</div>
+<div class="debug">81723: ♻️ Released Texture[35]</div>
+<div class="debug">81723: ♻️ Released Texture[205]</div>
+<div class="debug">81724: ♻️ Released Texture[124]</div>
+<div class="debug">81724: ♻️ Released Texture[30]</div>
+<div class="debug">81724: ♻️ Released Texture[137]</div>
+<div class="debug">81724: ♻️ Released Texture[171]</div>
+<div class="debug">81724: ♻️ Released Texture[218]</div>
+<div class="debug">81725: ♻️ Released Texture[196]</div>
+<div class="debug">81725: ♻️ Released Texture[119]</div>
+<div class="debug">81725: ♻️ Released Texture[230]</div>
+<div class="debug">81725: ♻️ Released Texture[128]</div>
+<div class="debug">81725: ♻️ Released Texture[162]</div>
+<div class="debug">81726: ♻️ Released Texture[221]</div>
+<div class="debug">81726: ♻️ Released Texture[110]</div>
+<div class="debug">81726: ♻️ Released Texture[153]</div>
+<div class="debug">81726: ♻️ Released Texture[187]</div>
+<div class="debug">81727: ♻️ Released Texture[42]</div>
+<div class="debug">81727: ♻️ Released Texture[165]</div>
+<div class="debug">81727: ♻️ Released Texture[212]</div>
+<div class="debug">81727: ♻️ Released Texture[97]</div>
+<div class="debug">81727: ♻️ Released Texture[144]</div>
+<div class="debug">81728: ♻️ Released Texture[178]</div>
+<div class="debug">81728: ♻️ Released Texture[45]</div>
+<div class="debug">81728: ♻️ Released Texture[92]</div>
+<div class="debug">81728: ♻️ Released Texture[207]</div>
+<div class="debug">81728: ♻️ Released Texture[126]</div>
+<div class="debug">81729: ♻️ Released Texture[139]</div>
+<div class="debug">81729: ♻️ Released Texture[181]</div>
+<div class="debug">81729: ♻️ Released Texture[36]</div>
+<div class="debug">81729: ♻️ Released Texture[198]</div>
+<div class="debug">81729: ♻️ Released Texture[113]</div>
+<div class="debug">81730: ♻️ Released Texture[224]</div>
+<div class="debug">81730: ♻️ Released Texture[130]</div>
+<div class="debug">81730: ♻️ Released Texture[172]</div>
+<div class="debug">81730: ♻️ Released Texture[223]</div>
+<div class="debug">81730: ♻️ Released Texture[104]</div>
+<div class="debug">81731: ♻️ Released Texture[155]</div>
+<div class="debug">81731: ♻️ Released Texture[133]</div>
+<div class="debug">81731: ♻️ Released Texture[167]</div>
+<div class="debug">81731: ♻️ Released Texture[214]</div>
+<div class="debug">81731: ♻️ Released Texture[99]</div>
+<div class="debug">81732: ♻️ Released Texture[146]</div>
+<div class="debug">81732: ♻️ Released Texture[188]</div>
+<div class="debug">81732: ♻️ Released Texture[47]</div>
+<div class="debug">81732: ♻️ Released Texture[94]</div>
+<div class="debug">81732: ♻️ Released Texture[201]</div>
+<div class="debug">81732: ♻️ Released Texture[120]</div>
+<div class="debug">81733: ♻️ Released Texture[149]</div>
+<div class="debug">81733: ♻️ Released Texture[183]</div>
+<div class="debug">81733: ♻️ Released Texture[38]</div>
+<div class="debug">81733: ♻️ Released Texture[192]</div>
+<div class="debug">81733: ♻️ Released Texture[115]</div>
+<div class="debug">81734: ♻️ Released Texture[226]</div>
+<div class="debug">81734: ♻️ Released Texture[29]</div>
+<div class="debug">81734: ♻️ Released Texture[140]</div>
+<div class="debug">81734: ♻️ Released Texture[174]</div>
+<div class="debug">81734: ♻️ Released Texture[217]</div>
+<div class="debug">81735: ♻️ Released Texture[106]</div>
+<div class="debug">81735: ♻️ Released Texture[229]</div>
+<div class="debug">81735: ♻️ Released Texture[135]</div>
+<div class="debug">81735: ♻️ Released Texture[161]</div>
+<div class="debug">81735: ♻️ Released Texture[208]</div>
+<div class="debug">81735: ♻️ Released Texture[109]</div>
+<div class="debug">81736: ♻️ Released Texture[156]</div>
+<div class="debug">81736: ♻️ Released Texture[190]</div>
+<div class="debug">81736: ♻️ Released Texture[41]</div>
+<div class="debug">81736: ♻️ Released Texture[203]</div>
+<div class="debug">81736: ♻️ Released Texture[122]</div>
+<div class="debug">81736: ♻️ Released Texture[100]</div>
+<div class="debug">81737: ♻️ Released Texture[151]</div>
+<div class="debug">81737: ♻️ Released Texture[177]</div>
+<div class="debug">81737: ♻️ Released Texture[32]</div>
+<div class="debug">81737: ♻️ Released Texture[194]</div>
+<div class="debug">81737: ♻️ Released Texture[125]</div>
+<div class="debug">81737: ♻️ Released Texture[31]</div>
+<div class="debug">81738: ♻️ Released Texture[142]</div>
+<div class="debug">81738: ♻️ Released Texture[168]</div>
+<div class="debug">81738: ♻️ Released Texture[219]</div>
+<div class="debug">81738: ♻️ Released Texture[197]</div>
+<div class="debug">81738: ♻️ Released Texture[116]</div>
+<div class="debug">81738: ♻️ Released Texture[231]</div>
+<div class="debug">81739: ♻️ Released Texture[129]</div>
+<div class="debug">81739: ♻️ Released Texture[48]</div>
+<div class="debug">81739: ♻️ Released Texture[163]</div>
+<div class="debug">81739: ♻️ Released Texture[210]</div>
+<div class="debug">81739: ♻️ Released Texture[111]</div>
+<div class="debug">81739: ♻️ Released Texture[158]</div>
+<div class="debug">81740: ♻️ Released Texture[184]</div>
+<div class="debug">81740: ♻️ Released Texture[43]</div>
+<div class="debug">81741: ♻️ Released Texture[90]</div>
+<div class="debug">81741: ♻️ Released Texture[213]</div>
+<div class="debug">81741: ♻️ Released Texture[102]</div>
+<div class="debug">81741: ♻️ Released Texture[145]</div>
+<div class="debug">81741: ♻️ Released Texture[0(null)]</div>
+<div class="debug">81741: ♻️ Released Texture[179]</div>
+<div class="debug">81742: ♻️ Released Texture[34]</div>
+<div class="debug">81742: ♻️ Released Texture[93]</div>
+<div class="debug">81742: ♻️ Released Texture[204]</div>
+<div class="debug">81742: ♻️ Released Texture[127]</div>
+<div class="debug">81742: ♻️ Released Texture[136]</div>
+<div class="debug">81742: ♻️ Released Texture[170]</div>
+<div class="trace">81745: CShader_D3D11::~CShader_D3D11()</div>
+<div class="debug">81745: ♻️ Released PixelShader[1]</div>
+<div class="debug">81745: ♻️ Released PixelShader[2]</div>
+<div class="debug">81746: ♻️ Released PixelShader[0(null)]</div>
+<div class="debug">81746: ♻️ Released VertexShader[0(null)]</div>
+<div class="trace">81746: CGraphics_D3D11::~CGraphics_D3D11()</div>
+<div class="trace">81765: CToastNotification::~CToastNotification()</div>
+<div class="trace">81765: CNetwork::~CNetwork()</div>
+<div class="trace">81766: CFFT::~CFFT()</div>
+<div class="debug">81777: ♻️ Released Audio[0(null)]</div>
+<div class="trace">81797: CSoundFont::~CSoundFont()</div>
+<div class="trace">81797: CAudioFormat::~CAudioFormat()</div>
+<div class="trace">81797: CCodec::~CCodec()</div>
+<div class="trace">81798: CDragDrop::~CDragDrop()</div>
+<div class="trace">81799: CClipboard::~CClipboard()</div>
+<div class="trace">81799: CTextToSpeech::~CTextToSpeech()</div>
+<div class="trace">81800: CTextInput::~CTextInput()</div>
+<div class="trace">81800: CXInput::~CXInput()</div>
+<div class="trace">81800: CGamepad::~CGamepad()</div>
+<div class="trace">81801: CMouse::~CMouse()</div>
+<div class="trace">81801: CKeyboard::CKeyboard()</div>
+<div class="trace">81801: CCursor::~CCursor()</div>
+<div class="trace">81801: CWindow::~CWindow()</div>
+<div class="trace">81820: WM_DESTROY</div>
+<div class="trace">81841: message.message == WM_QUIT</div>
+<div class="trace">81841: CObjectDetection::~CObjectDetection()</div>
+<div class="trace">81841: CImageFormat::~CImageFormat()</div>
+<div class="trace">81841: CProfiler::~CProfiler()</div>
+<div class="trace">81842: CCPU::~CCPU()</div>
+<div class="info">81849: ✅ Siv3D engine has terminated</div>
+<div class="info">81849: ℹ️ 2020/2/18 12:18:18</div>
+</div>
+</body>
+</html>
